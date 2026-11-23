@@ -88,3 +88,17 @@ document.addEventListener("DOMContentLoaded", () => {
     revealEls.forEach(el => observer.observe(el));
   } else revealEls.forEach(el => el.classList.add("revealed"));
 });
+
+// SLOW, SUBTLE VIDEO MOVEMENT
+
+document.addEventListener("DOMContentLoaded", () => {
+  const video = document.getElementById("heroVideo");
+
+  if (!video) return;
+
+  video.playbackRate = 0.8;
+
+  video.addEventListener("loadedmetadata", () => {
+    video.playbackRate = 0.8;
+  });
+});
