@@ -281,3 +281,24 @@
     font-size: 10px !important;
   }
 }
+
+/* FINAL LABEL PLACEMENT: keep labels beside their objects, not over the laptop/face. */
+.video-hero .brain-hotspot .hotspot-label {
+  left: auto !important;
+  right: calc(100% + 12px) !important;
+  top: 42% !important;
+  bottom: auto !important;
+}
+.video-hero .bag-hotspot .hotspot-label {
+  left: auto !important;
+  right: calc(100% + 12px) !important;
+  top: 48% !important;
+  bottom: auto !important;
+}
+@media (max-width: 520px) {
+  .video-hero .brain-hotspot .hotspot-label,
+  .video-hero .bag-hotspot .hotspot-label {
+    left: auto !important;
+    right: calc(100% + 6px) !important;
+  }
+}
