@@ -211,3 +211,163 @@
 
 }
 
+/* =========================================
+   KESHAV — CLEAN EDITORIAL HOVER SYSTEM
+   ========================================= */
+
+/* Invisible clickable areas */
+
+.video-hotspot {
+    position: absolute !important;
+    z-index: 30 !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+    box-shadow: none !important;
+
+    cursor: pointer;
+    overflow: visible !important;
+}
+
+/* Remove any red hover overlay */
+
+.video-hotspot:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Reset and redesign the labels */
+
+.video-hotspot .hotspot-label {
+    position: absolute !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: max-content !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-width: 190px !important;
+
+    padding: 9px 13px !important;
+    margin: 0 !important;
+
+    background: #f5eee3 !important;
+    color: #171615 !important;
+
+    border: 1px solid #171615 !important;
+    border-radius: 2px !important;
+
+    font-family: var(--mono), monospace !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+
+    line-height: 1.3 !important;
+    letter-spacing: .02em !important;
+    white-space: nowrap !important;
+
+    box-shadow: 3px 3px 0 #c92c2c !important;
+
+    opacity: 0 !important;
+    visibility: hidden !important;
+
+    pointer-events: none !important;
+
+    transform: translateY(5px) !important;
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease,
+        visibility .2s ease !important;
+}
+
+/* Reveal only the text */
+
+.video-hotspot:hover .hotspot-label,
+.video-hotspot:focus-visible .hotspot-label {
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    transform: translateY(0) !important;
+}
+
+/* =========================================
+   POSITION THE THREE CLICKABLE AREAS
+   ========================================= */
+
+/* HEAD */
+
+.brain-hotspot {
+    left: 45% !important;
+    top: 2% !important;
+    width: 20% !important;
+    height: 38% !important;
+}
+
+.brain-hotspot .hotspot-label {
+    left: calc(100% + 12px) !important;
+    top: 45% !important;
+}
+
+/* LAPTOP */
+
+.laptop-hotspot {
+    left: 62% !important;
+    top: 68% !important;
+    width: 27% !important;
+    height: 30% !important;
+}
+
+.laptop-hotspot .hotspot-label {
+    left: 50% !important;
+    top: -12px !important;
+    transform: translate(-50%, 5px) !important;
+}
+
+.laptop-hotspot:hover .hotspot-label,
+.laptop-hotspot:focus-visible .hotspot-label {
+    transform: translate(-50%, 0) !important;
+}
+
+/* BACKPACK */
+
+.bag-hotspot {
+    left: 34% !important;
+    top: 48% !important;
+    width: 18% !important;
+    height: 47% !important;
+}
+
+.bag-hotspot .hotspot-label {
+    left: calc(100% + 10px) !important;
+    top: 40% !important;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .video-hotspot .hotspot-label {
+        font-size: 9px !important;
+        padding: 7px 9px !important;
+    }
+
+    .brain-hotspot .hotspot-label {
+        left: 50% !important;
+        top: 100% !important;
+    }
+
+    .bag-hotspot .hotspot-label {
+        left: 100% !important;
+    }
+
+}
+
+
