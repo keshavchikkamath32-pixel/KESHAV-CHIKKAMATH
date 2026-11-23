@@ -319,3 +319,13 @@
     top: 0% !important;
   }
 }
+
+/* Lift the creativity label slightly so it clears the eyes. */
+.video-hero .brain-hotspot .hotspot-label {
+  top: -22px !important;
+}
+@media (max-width: 520px) {
+  .video-hero .brain-hotspot .hotspot-label {
+    top: -22px !important;
+  }
+}
