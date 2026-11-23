@@ -48,20 +48,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  // Use the actual pointer coordinates for the creativity label.
-  // This prevents the label from appearing due to an oversized/stale CSS hover region.
+  // Show the creativity label only while the pointer is physically over
+  // the head hotspot. Clear it on exit and after touch interactions.
   const headHotspot = document.querySelector(".video-hero .brain-hotspot");
-  const heroStage = document.querySelector(".video-hero");
-  if (headHotspot && heroStage) {
-    const updateHeadHover = event => {
-      const rect = headHotspot.getBoundingClientRect();
-      const inside = event.clientX >= rect.left && event.clientX <= rect.right &&
-        event.clientY >= rect.top && event.clientY <= rect.bottom;
-      headHotspot.classList.toggle("pointer-inside-head", inside);
+  if (headHotspot) {
+    const showHeadLabel = event => {
+      if (event.pointerType !== "touch") headHotspot.classList.add("pointer-inside-head");
     };
-    document.addEventListener("pointermove", updateHeadHover);
-    heroStage.addEventListener("pointerleave", () => {
-      headHotspot.classList.remove("pointer-inside-head");
+    const hideHeadLabel = () => headHotspot.classList.remove("pointer-inside-head");
+    headHotspot.addEventListener("pointerenter", showHeadLabel);
+    headHotspot.addEventListener("pointerleave", hideHeadLabel);
+    headHotspot.addEventListener("pointerup", hideHeadLabel);
+    headHotspot.addEventListener("pointercancel", hideHeadLabel);
+    document.addEventListener("pointerdown", event => {
+      if (!headHotspot.contains(event.target)) hideHeadLabel();
     });
   }
 
