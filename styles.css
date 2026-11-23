@@ -329,3 +329,41 @@
     top: -22px !important;
   }
 }
+
+/* PRECISE CREATIVITY HOTSPOT + LABEL PLACEMENT (desktop and mobile). */
+.video-hero .brain-hotspot {
+  left: 52% !important;
+  top: 2% !important;
+  width: 15% !important;
+  height: 13% !important;
+}
+.video-hero .brain-hotspot .hotspot-label {
+  left: calc(100% + 12px) !important;
+  right: auto !important;
+  top: 0 !important;
+  bottom: auto !important;
+}
+@media (max-width: 800px) {
+  .video-hero .brain-hotspot {
+    left: 45% !important;
+    top: 2% !important;
+    width: 20% !important;
+    height: 14% !important;
+  }
+  .video-hero .brain-hotspot .hotspot-label {
+    left: auto !important;
+    right: calc(100% + 8px) !important;
+    top: 0 !important;
+    bottom: auto !important;
+  }
+}
+/* Keep labels hidden unless the pointer is actually over that hotspot.
+   Keyboard focus still has a visible outline on the button. */
+.video-hero .video-hotspot:focus-visible .hotspot-label {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.video-hero .video-hotspot:hover .hotspot-label {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
