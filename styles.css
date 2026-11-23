@@ -423,3 +423,19 @@
 .video-hero .brain-hotspot > .hotspot-label {
   pointer-events: none !important;
 }
+
+/* Keep the creativity label inside the visible video stage.
+   The hero clips content above its top edge, so do not use a negative top offset. */
+.video-hero .brain-hotspot > .hotspot-label {
+  left: 50% !important;
+  right: auto !important;
+  top: 6px !important;
+  bottom: auto !important;
+  transform: translate(-50%, 0) !important;
+  z-index: 30 !important;
+}
+.video-hero .brain-hotspot.pointer-inside-head > .hotspot-label {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translate(-50%, 0) !important;
+}
