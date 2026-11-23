@@ -439,3 +439,36 @@
   visibility: visible !important;
   transform: translate(-50%, 0) !important;
 }
+
+/* SINGLE SOURCE OF TRUTH — creativity hotspot.
+   Its label is placed beside the head and shown only by the pointer-bound
+   class added by script.js. It must not appear from generic :hover/focus rules. */
+.video-hero .brain-hotspot > .hotspot-label {
+  left: calc(100% + 12px) !important;
+  right: auto !important;
+  top: 0 !important;
+  bottom: auto !important;
+  transform: none !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  z-index: 30 !important;
+}
+.video-hero .brain-hotspot:hover > .hotspot-label,
+.video-hero .brain-hotspot:focus > .hotspot-label,
+.video-hero .brain-hotspot:focus-visible > .hotspot-label {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.video-hero .brain-hotspot.pointer-inside-head > .hotspot-label {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+@media (max-width: 800px) {
+  .video-hero .brain-hotspot > .hotspot-label {
+    left: auto !important;
+    right: calc(100% + 8px) !important;
+    top: 0 !important;
+  }
+}
