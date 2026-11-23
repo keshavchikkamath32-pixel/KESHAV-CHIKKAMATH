@@ -115,3 +115,99 @@
     padding: 9px 11px;
   }
 }
+
+/* =====================================
+   FIX: HOVER LABEL POSITIONING
+   ===================================== */
+
+/* Keep interactive areas correctly layered */
+
+.video-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.video-hotspot {
+    position: absolute;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+/* Hover labels */
+
+.hotspot-label {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%) scale(0.9);
+
+    display: block;
+    width: max-content;
+    max-width: 180px;
+
+    padding: 12px 16px;
+
+    background: #c92c2c;
+    color: #ffffff;
+
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.4;
+
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    box-shadow: 4px 4px 0 #171615;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+}
+
+/* Show on hover */
+
+.video-hotspot:hover .hotspot-label,
+.video-hotspot:focus-visible .hotspot-label {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Individual label positioning */
+
+.brain-hotspot .hotspot-label {
+    top: 65%;
+}
+
+.laptop-hotspot .hotspot-label {
+    top: 50%;
+}
+
+.bag-hotspot .hotspot-label {
+    top: 50%;
+}
+
+/* Mobile adjustments */
+
+@media (max-width: 700px) {
+
+    .hotspot-label {
+        font-size: 10px;
+        padding: 9px 11px;
+    }
+
+}
+
