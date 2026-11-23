@@ -527,3 +527,10 @@
     right: calc(100% + 2px) !important;
   }
 }
+
+/* Position the creativity label nearer the head itself, not beyond the
+   far edge of the full head/face hotspot. */
+.video-hero .brain-hotspot > .hotspot-label {
+  left: 55% !important;
+  right: auto !important;
+}
