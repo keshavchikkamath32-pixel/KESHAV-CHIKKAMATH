@@ -407,3 +407,19 @@
     height: 15% !important;
   }
 }
+
+/* Creativity label visibility is controlled by exact pointer coordinates in script.js,
+   never by the browser's broad :hover state. */
+.video-hero .brain-hotspot:hover > .hotspot-label,
+.video-hero .brain-hotspot:focus-visible > .hotspot-label {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.video-hero .brain-hotspot.pointer-inside-head > .hotspot-label {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translate(-50%, 0) !important;
+}
+.video-hero .brain-hotspot > .hotspot-label {
+  pointer-events: none !important;
+}
