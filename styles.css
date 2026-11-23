@@ -515,3 +515,15 @@
     top: 18% !important;
   }
 }
+
+/* Fine adjustment: bring the creativity dialogue closer to the head. */
+.video-hero .brain-hotspot > .hotspot-label {
+  left: calc(100% + 2px) !important;
+  right: auto !important;
+}
+@media (max-width: 800px) {
+  .video-hero .brain-hotspot > .hotspot-label {
+    left: auto !important;
+    right: calc(100% + 2px) !important;
+  }
+}
