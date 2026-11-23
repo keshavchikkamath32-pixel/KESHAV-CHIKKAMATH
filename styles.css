@@ -515,3 +515,90 @@
 }
 
 
+/* =====================================
+   FINAL HOTSPOT POSITION CORRECTION
+   Based on actual video frame
+===================================== */
+
+/* HEAD - SEE MY CREATIVITY */
+
+.video-hero .brain-hotspot {
+    left: 45.5% !important;
+    top: 12.5% !important;
+    width: 13.5% !important;
+    height: 30% !important;
+}
+
+.video-hero .brain-hotspot .hotspot-label {
+    left: calc(100% + 14px) !important;
+    top: 50% !important;
+    right: auto !important;
+    transform: translateY(-50%) translateX(-8px) !important;
+}
+
+/* LAPTOP - SEE MY WORK */
+
+.video-hero .laptop-hotspot {
+    left: 54% !important;
+    top: 56% !important;
+    width: 27% !important;
+    height: 29% !important;
+}
+
+.video-hero .laptop-hotspot .hotspot-label {
+    left: 50% !important;
+    right: auto !important;
+    top: -15px !important;
+    transform: translate(-50%, -100%) !important;
+}
+
+/* BACKPACK - SEE MY BACKGROUND */
+
+.video-hero .bag-hotspot {
+    left: 31.5% !important;
+    top: 38% !important;
+    width: 15.5% !important;
+    height: 57% !important;
+}
+
+.video-hero .bag-hotspot .hotspot-label {
+    right: calc(100% + 12px) !important;
+    left: auto !important;
+    top: 45% !important;
+    transform: translateY(-50%) translateX(8px) !important;
+}
+
+/* HOVER ANIMATION */
+
+.video-hero .brain-hotspot:hover .hotspot-label,
+.video-hero .bag-hotspot:hover .hotspot-label {
+    transform: translateY(-50%) translateX(0) !important;
+}
+
+.video-hero .laptop-hotspot:hover .hotspot-label {
+    transform: translate(-50%, calc(-100% - 5px)) !important;
+}
+
+/* KEEP LABELS HIDDEN UNTIL HOVER */
+
+.video-hero .hotspot-label {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+.video-hero .video-hotspot:hover .hotspot-label,
+.video-hero .video-hotspot:focus-visible .hotspot-label {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+    .video-hero .hotspot-label {
+        font-size: 10px !important;
+        padding: 8px 10px !important;
+    }
+}
+
