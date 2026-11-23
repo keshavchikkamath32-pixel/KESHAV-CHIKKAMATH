@@ -534,3 +534,16 @@
   left: 55% !important;
   right: auto !important;
 }
+
+/* Final proximity adjustment: move the creativity label substantially left
+   within the head hotspot, so it sits beside the head rather than far away. */
+.video-hero .brain-hotspot > .hotspot-label {
+  left: 10% !important;
+  right: auto !important;
+}
+@media (max-width: 800px) {
+  .video-hero .brain-hotspot > .hotspot-label {
+    left: 10% !important;
+    right: auto !important;
+  }
+}
