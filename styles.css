@@ -303,3 +303,19 @@
     right: calc(100% + 6px) !important;
   }
 }
+
+/* Creativity label: keep the clickable target over the hair, but place its
+   dialogue box to the right of the head so it never sits over the nose/face. */
+.video-hero .brain-hotspot .hotspot-label {
+  left: calc(100% + 10px) !important;
+  right: auto !important;
+  top: 62% !important;
+  bottom: auto !important;
+}
+@media (max-width: 520px) {
+  .video-hero .brain-hotspot .hotspot-label {
+    left: auto !important;
+    right: calc(100% + 6px) !important;
+    top: 62% !important;
+  }
+}
