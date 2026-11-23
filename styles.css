@@ -138,16 +138,17 @@
 
 /* BACKPACK — label sits just to the right of the backpack. */
 .video-hero .bag-hotspot {
-  /* Keep the hit area over the visible backpack strap and bag. */
-  left: 39% !important;
-  top: 45% !important;
-  width: 16% !important;
-  height: 53% !important;
+  /* Hit area follows the backpack strap on the wearer's right shoulder. */
+  left: 36% !important;
+  top: 40% !important;
+  width: 13% !important;
+  height: 43% !important;
 }
 .video-hero .bag-hotspot .hotspot-label {
-  left: calc(100% + 12px) !important;
-  right: auto !important;
-  top: 54% !important;
+  /* Keep the background label beside the backpack, away from the laptop. */
+  left: auto !important;
+  right: calc(100% + 12px) !important;
+  top: 8% !important;
   bottom: auto !important;
   transform: translate(0, 8px) !important;
 }
@@ -199,10 +200,15 @@
     height: 32% !important;
   }
   .video-hero .bag-hotspot {
-    left: 37% !important;
-    top: 44% !important;
-    width: 19% !important;
-    height: 54% !important;
+    left: 34% !important;
+    top: 40% !important;
+    width: 16% !important;
+    height: 44% !important;
+  }
+  .video-hero .bag-hotspot .hotspot-label {
+    left: auto !important;
+    right: calc(100% + 5px) !important;
+    top: 8% !important;
   }
 }
 
