@@ -19,44 +19,48 @@
   </header>
 
   <main>
-    <section class="hero-stage" aria-label="Interactive portfolio introduction">
-      <img class="hero-art" src="./homepage-collage.png" alt="Illustrated collage portrait of Keshav with a brain, laptop and backpack">
-      <div class="hero-overlay">
-        <div class="hero-copy">
-          <p class="eyebrow">A LITTLE IDEAS FACTORY · BENGALURU</p>
-          <h1>Ideas.<br>Impact.<br><em>Inspiration.</em></h1>
-          <p class="role-line">Content Marketer. Brand Storyteller.<br>Aspiring Ad Filmmaker.</p>
-        </div>
-        <button class="hotspot brain-hotspot" data-href="creativity.html" data-sound aria-label="See my creativity">
-          <span class="hotspot-label">See my creativity ↗</span>
-        </button>
-        <button class="hotspot laptop-hotspot" data-href="work.html" data-sound aria-label="Explore my work experience">
-          <span class="hotspot-label">My work experience ↗</span>
-        </button>
-        <button class="hotspot bag-hotspot" data-href="journey.html" data-sound aria-label="Explore my journey">
-          <span class="hotspot-label">My journey ↗</span>
-        </button>
-        <div class="tiny-note note-left">Just a guy<br>with too many<br>ideas...</div>
-        <div class="hero-bottom-note"><span class="scribble-line"></span> Scroll to snoop around <span class="scribble-line"></span></div>
-      </div>
-    </section>
+   
+<main>
+  <section class="hero-stage video-hero">
 
-    <section class="intro-strip paper-section">
-      <div class="section-kicker">01 / THE SHORT VERSION</div>
-      <div><h2>Curious by default.<br><span>Creative on purpose.</span></h2></div>
-      <p>I like taking a good idea and turning it into something people notice, remember and respond to. My work lives around content, brand communication and social-first storytelling.</p>
-      <a class="text-link" href="journey.html">A little more about me ↗</a>
-    </section>
+    <video
+      id="heroVideo"
+      class="hero-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+    >
+      <source
+        src="./Man_typing_on_laptop_71f9d0cd_1080p.mp4"
+        type="video/mp4"
+      >
+    </video>
 
-    <section class="three-door-section">
-      <div class="section-kicker">02 / PICK A DOOR</div>
-      <div class="door-grid">
-        <a class="door-card door-red" href="creativity.html"><span class="door-number">01</span><div class="door-illustration">✳</div><h3>Inside my<br>head.</h3><p>Reels, concepts, experiments & ideas.</p><span class="door-arrow">↗</span></a>
-        <a class="door-card door-cream" href="work.html"><span class="door-number">02</span><div class="door-illustration">▱</div><h3>Things I've<br>worked on.</h3><p>Projects, campaigns & experience.</p><span class="door-arrow">↗</span></a>
-        <a class="door-card door-black" href="journey.html"><span class="door-number">03</span><div class="door-illustration">⌁</div><h3>How I got<br>here.</h3><p>Education, milestones & the in-between.</p><span class="door-arrow">↗</span></a>
-      </div>
-    </section>
+    <button class="hotspot video-hotspot brain-hotspot"
+      data-href="creativity.html"
+      data-sound
+      aria-label="See my creativity">
+      <span class="hotspot-label">See my creativity ↗</span>
+    </button>
+
+    <button class="hotspot video-hotspot laptop-hotspot"
+      data-href="work.html"
+      data-sound
+      aria-label="See my work">
+      <span class="hotspot-label">See my work ↗</span>
+    </button>
+
+    <button class="hotspot video-hotspot bag-hotspot"
+      data-href="journey.html"
+      data-sound
+      aria-label="See my background">
+      <span class="hotspot-label">See my background ↗</span>
+    </button>
+
+  </section>
+</main>
+
   </main>
-  <footer class="site-footer"><span>© <span data-year></span> Keshav Chikkamath</span><span>Made of ideas & a little caffeine.</span><a href="contact.html">Say hello ↗</a></footer>
-  <script src="script.js"></script>
-</body></html>
+ 
