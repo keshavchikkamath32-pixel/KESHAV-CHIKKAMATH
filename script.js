@@ -46,6 +46,25 @@ document.addEventListener("DOMContentLoaded", () => {
     el.addEventListener("click", () => { clickSound(); window.location.href = el.dataset.href; });
   });
 
+
+
+  // Use the actual pointer coordinates for the creativity label.
+  // This prevents the label from appearing due to an oversized/stale CSS hover region.
+  const headHotspot = document.querySelector(".video-hero .brain-hotspot");
+  const heroStage = document.querySelector(".video-hero");
+  if (headHotspot && heroStage) {
+    const updateHeadHover = event => {
+      const rect = headHotspot.getBoundingClientRect();
+      const inside = event.clientX >= rect.left && event.clientX <= rect.right &&
+        event.clientY >= rect.top && event.clientY <= rect.bottom;
+      headHotspot.classList.toggle("pointer-inside-head", inside);
+    };
+    document.addEventListener("pointermove", updateHeadHover);
+    heroStage.addEventListener("pointerleave", () => {
+      headHotspot.classList.remove("pointer-inside-head");
+    });
+  }
+
   // Work laptop folders.
   const projects = {
     green: {
