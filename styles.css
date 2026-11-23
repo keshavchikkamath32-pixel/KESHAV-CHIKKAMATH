@@ -587,3 +587,43 @@
     top: 8% !important;
   }
 }
+
+
+/* Correct the head hit area to the actual head in the hero image.
+   The red background to the right is deliberately NOT clickable. */
+.video-hero .brain-hotspot {
+  left: 7% !important;
+  top: 2% !important;
+  width: 39% !important;
+  height: 49% !important;
+}
+.video-hero .brain-hotspot > .hotspot-label {
+  left: 8% !important;
+  right: auto !important;
+  top: 8% !important;
+}
+@media (max-width: 800px) {
+  .video-hero .brain-hotspot {
+    left: 5% !important;
+    top: 2% !important;
+    width: 48% !important;
+    height: 49% !important;
+  }
+  .video-hero .brain-hotspot > .hotspot-label {
+    left: 8% !important;
+    right: auto !important;
+    top: 8% !important;
+  }
+}
+
+/* Never show creativity from a generic CSS hover or keyboard focus state. */
+.video-hero .brain-hotspot:hover > .hotspot-label,
+.video-hero .brain-hotspot:focus > .hotspot-label,
+.video-hero .brain-hotspot:focus-visible > .hotspot-label {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.video-hero .brain-hotspot.pointer-inside-head > .hotspot-label {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
