@@ -107,10 +107,11 @@
 
 /* HEAD — label sits to the right of the head, not over the face. */
 .video-hero .brain-hotspot {
-  left: 24% !important;
-  top: 3% !important;
-  width: 22% !important;
-  height: 37% !important;
+  /* Small hit area centred on the visible ear, not across the face. */
+  left: 47% !important;
+  top: 15% !important;
+  width: 9% !important;
+  height: 22% !important;
 }
 .video-hero .brain-hotspot .hotspot-label {
   left: calc(100% + 12px) !important;
@@ -137,11 +138,11 @@
 
 /* BACKPACK — label sits just to the right of the backpack. */
 .video-hero .bag-hotspot {
-  /* Align the hit area with the backpack strap on the wearer's shoulder. */
-  left: 34% !important;
-  top: 44% !important;
-  width: 18% !important;
-  height: 54% !important;
+  /* Keep the hit area over the visible backpack strap and bag. */
+  left: 39% !important;
+  top: 45% !important;
+  width: 16% !important;
+  height: 53% !important;
 }
 .video-hero .bag-hotspot .hotspot-label {
   left: calc(100% + 12px) !important;
@@ -186,10 +187,10 @@
     font-size: 9px !important;
   }
   .video-hero .brain-hotspot {
-    left: 22% !important;
-    top: 4% !important;
-    width: 27% !important;
-    height: 34% !important;
+    left: 44% !important;
+    top: 16% !important;
+    width: 13% !important;
+    height: 22% !important;
   }
   .video-hero .laptop-hotspot {
     left: 48% !important;
@@ -198,9 +199,9 @@
     height: 32% !important;
   }
   .video-hero .bag-hotspot {
-    left: 32% !important;
-    top: 43% !important;
-    width: 23% !important;
+    left: 37% !important;
+    top: 44% !important;
+    width: 19% !important;
     height: 54% !important;
   }
 }
