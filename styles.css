@@ -367,3 +367,16 @@
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+/* CREATIVITY LABEL: centered directly above the head hotspot.
+   Keep the hotspot hit-area unchanged until its exact boundary is visually confirmed. */
+.video-hero .brain-hotspot > .hotspot-label {
+  left: 50% !important;
+  right: auto !important;
+  top: -54px !important;
+  bottom: auto !important;
+  transform: translate(-50%, 8px) !important;
+}
+.video-hero .brain-hotspot:hover > .hotspot-label {
+  transform: translate(-50%, 0) !important;
+}
