@@ -472,3 +472,46 @@
     top: 0 !important;
   }
 }
+
+/* Head/face interaction area: do not move or resize the video.
+   The pointer-bound visibility logic in script.js uses this button's rectangle. */
+.video-hero .brain-hotspot {
+  left: 48% !important;
+  top: 0% !important;
+  width: 20% !important;
+  height: 50% !important;
+}
+.video-hero .brain-hotspot > .hotspot-label {
+  left: calc(100% + 12px) !important;
+  right: auto !important;
+  top: 18% !important;
+  bottom: auto !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: none !important;
+}
+.video-hero .brain-hotspot:hover > .hotspot-label,
+.video-hero .brain-hotspot:focus > .hotspot-label,
+.video-hero .brain-hotspot:focus-visible > .hotspot-label {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.video-hero .brain-hotspot.pointer-inside-head > .hotspot-label {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+@media (max-width: 800px) {
+  .video-hero .brain-hotspot {
+    left: 42% !important;
+    top: 0% !important;
+    width: 27% !important;
+    height: 48% !important;
+  }
+  .video-hero .brain-hotspot > .hotspot-label {
+    left: auto !important;
+    right: calc(100% + 8px) !important;
+    top: 18% !important;
+  }
+}
