@@ -547,3 +547,43 @@
     right: auto !important;
   }
 }
+
+
+/* Final isolated hotspot boundaries and closer creativity label. */
+.video-hero .brain-hotspot {
+  left: 48% !important;
+  top: 0% !important;
+  width: 20% !important;
+  height: 48% !important;
+}
+.video-hero .bag-hotspot {
+  left: 36% !important;
+  top: 50% !important;
+  width: 11% !important;
+  height: 35% !important;
+}
+.video-hero .brain-hotspot > .hotspot-label {
+  left: 8% !important;
+  right: auto !important;
+  top: 8% !important;
+  bottom: auto !important;
+}
+@media (max-width: 800px) {
+  .video-hero .brain-hotspot {
+    left: 42% !important;
+    top: 0% !important;
+    width: 27% !important;
+    height: 48% !important;
+  }
+  .video-hero .bag-hotspot {
+    left: 34% !important;
+    top: 50% !important;
+    width: 8% !important;
+    height: 34% !important;
+  }
+  .video-hero .brain-hotspot > .hotspot-label {
+    left: 8% !important;
+    right: auto !important;
+    top: 8% !important;
+  }
+}
