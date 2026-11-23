@@ -78,28 +78,31 @@
 .video-hero .hotspot-label {
   position: absolute !important;
   z-index: 10 !important;
-  display: inline-flex !important;
+  display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: max-content !important;
-  max-width: min(220px, 42vw) !important;
-  min-width: 0 !important;
-  height: auto !important;
-  padding: 11px 14px !important;
+  width: 190px !important;
+  min-width: 190px !important;
+  max-width: 190px !important;
+  height: 42px !important;
+  min-height: 42px !important;
+  box-sizing: border-box !important;
+  padding: 0 8px !important;
   margin: 0 !important;
-  border: 1px solid var(--ink) !important;
-  border-bottom: 3px solid var(--red) !important;
-  border-radius: 2px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: clip !important;
   background: var(--paper) !important;
   color: var(--ink) !important;
-  font: 600 11px/1.35 var(--mono) !important;
-  letter-spacing: .01em !important;
-  text-align: center !important;
-  white-space: nowrap !important;
+  border: 1px solid var(--ink) !important;
+  border-bottom: 3px solid var(--red) !important;
+  box-shadow: 4px 4px 0 var(--red) !important;
+  font: 600 11px var(--mono) !important;
+  line-height: 1 !important;
   opacity: 0 !important;
   visibility: hidden !important;
-  pointer-events: none !important;
-  transition: opacity .18s ease, visibility .18s ease, transform .18s ease !important;
+  transform: translateY(8px) !important;
+  transition: opacity .2s ease, transform .2s ease, visibility .2s ease !important;
 }
 
 /* HEAD — label sits to the right of the head, not over the face. */
@@ -174,7 +177,11 @@
     object-position: center center !important;
   }
   .video-hero .hotspot-label {
-    padding: 8px 10px !important;
+    width: 170px !important;
+    min-width: 170px !important;
+    max-width: 170px !important;
+    height: 38px !important;
+    min-height: 38px !important;
     font-size: 9px !important;
   }
   .video-hero .brain-hotspot {
@@ -202,7 +209,11 @@
     min-height: 420px !important;
   }
   .video-hero .hotspot-label {
-    padding: 7px 8px !important;
+    width: 150px !important;
+    min-width: 150px !important;
+    max-width: 150px !important;
+    height: 34px !important;
+    min-height: 34px !important;
     font-size: 8px !important;
   }
   .video-hero .brain-hotspot .hotspot-label,
