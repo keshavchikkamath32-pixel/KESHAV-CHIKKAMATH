@@ -380,3 +380,30 @@
 .video-hero .brain-hotspot:hover > .hotspot-label {
   transform: translate(-50%, 0) !important;
 }
+
+/* FINAL HEAD HOTSPOT CORRECTION — tight hair-only target; label above it. */
+.video-hero .brain-hotspot {
+  left: 51.5% !important;
+  top: 0.5% !important;
+  width: 12% !important;
+  height: 14% !important;
+}
+.video-hero .brain-hotspot > .hotspot-label {
+  left: 50% !important;
+  right: auto !important;
+  top: -54px !important;
+  bottom: auto !important;
+  pointer-events: none !important;
+  transform: translate(-50%, 8px) !important;
+}
+.video-hero .brain-hotspot:hover > .hotspot-label {
+  transform: translate(-50%, 0) !important;
+}
+@media (max-width: 800px) {
+  .video-hero .brain-hotspot {
+    left: 44% !important;
+    top: 1% !important;
+    width: 17% !important;
+    height: 15% !important;
+  }
+}
