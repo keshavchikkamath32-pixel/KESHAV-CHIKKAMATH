@@ -107,11 +107,11 @@
 
 /* HEAD — label sits to the right of the head, not over the face. */
 .video-hero .brain-hotspot {
-  /* Small hit area centred on the visible ear, not across the face. */
-  left: 47% !important;
-  top: 15% !important;
-  width: 9% !important;
-  height: 22% !important;
+  /* Clickable area covers the hair/head region so tapping the hair opens Creativity. */
+  left: 51% !important;
+  top: 0% !important;
+  width: 21% !important;
+  height: 25% !important;
 }
 .video-hero .brain-hotspot .hotspot-label {
   left: calc(100% + 12px) !important;
@@ -188,10 +188,11 @@
     font-size: 9px !important;
   }
   .video-hero .brain-hotspot {
-    left: 44% !important;
-    top: 16% !important;
-    width: 13% !important;
-    height: 22% !important;
+    /* Broader head/hair target on narrow screens too. */
+    left: 43% !important;
+    top: 2% !important;
+    width: 27% !important;
+    height: 25% !important;
   }
   .video-hero .laptop-hotspot {
     left: 48% !important;
