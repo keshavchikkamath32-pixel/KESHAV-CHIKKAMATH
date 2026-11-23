@@ -302,72 +302,200 @@
    POSITION THE THREE CLICKABLE AREAS
    ========================================= */
 
-/* HEAD */
 
-.brain-hotspot {
+/* ==========================================
+   KESHAV - INTERACTIVE VIDEO HOTSPOTS
+   Clean, invisible click areas + floating labels
+========================================== */
+
+/* COMMON HOTSPOT SETTINGS */
+
+.video-hero .video-hotspot {
+    position: absolute !important;
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    cursor: pointer;
+    z-index: 10;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* LABEL DEFAULT STATE */
+
+.video-hero .video-hotspot .hotspot-label {
+    position: absolute !important;
+
+    display: block !important;
+    width: max-content !important;
+    max-width: 190px;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    color: #c52c2c !important;
+
+    font-family: inherit;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+
+    white-space: nowrap;
+}
+
+/* SHOW LABEL ON HOVER / KEYBOARD FOCUS */
+
+.video-hero .video-hotspot:hover .hotspot-label,
+.video-hero .video-hotspot:focus-visible .hotspot-label {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ==========================================
+   1. BRAIN - CREATIVE WORK
+========================================== */
+
+.video-hero .brain-hotspot {
     left: 45% !important;
     top: 2% !important;
     width: 20% !important;
     height: 38% !important;
 }
 
-.brain-hotspot .hotspot-label {
+.video-hero .brain-hotspot .hotspot-label {
     left: calc(100% + 12px) !important;
-    top: 45% !important;
+    top: 25% !important;
+    transform: translateX(-6px);
 }
 
-/* LAPTOP */
+.video-hero .brain-hotspot:hover .hotspot-label,
+.video-hero .brain-hotspot:focus-visible .hotspot-label {
+    transform: translateX(0);
+}
 
-.laptop-hotspot {
+/* ==========================================
+   2. LAPTOP - WORK EXPERIENCE
+========================================== */
+
+.video-hero .laptop-hotspot {
     left: 62% !important;
     top: 68% !important;
     width: 27% !important;
     height: 30% !important;
 }
 
-.laptop-hotspot .hotspot-label {
+.video-hero .laptop-hotspot .hotspot-label {
     left: 50% !important;
-    top: -12px !important;
-    transform: translate(-50%, 5px) !important;
+    bottom: calc(100% + 12px) !important;
+    top: auto !important;
+    transform: translate(-50%, 6px);
 }
 
-.laptop-hotspot:hover .hotspot-label,
-.laptop-hotspot:focus-visible .hotspot-label {
-    transform: translate(-50%, 0) !important;
+.video-hero .laptop-hotspot:hover .hotspot-label,
+.video-hero .laptop-hotspot:focus-visible .hotspot-label {
+    transform: translate(-50%, 0);
 }
 
-/* BACKPACK */
+/* ==========================================
+   3. BAG - PERSONAL BACKGROUND
+========================================== */
 
-.bag-hotspot {
+.video-hero .bag-hotspot {
     left: 34% !important;
     top: 48% !important;
     width: 18% !important;
     height: 47% !important;
 }
 
-.bag-hotspot .hotspot-label {
-    left: calc(100% + 10px) !important;
+.video-hero .bag-hotspot .hotspot-label {
+    right: calc(100% + 12px) !important;
+    left: auto !important;
     top: 40% !important;
+    transform: translateX(6px);
 }
 
-/* MOBILE */
+.video-hero .bag-hotspot:hover .hotspot-label,
+.video-hero .bag-hotspot:focus-visible .hotspot-label {
+    transform: translateX(0);
+}
+
+/* KEYBOARD ACCESSIBILITY */
+
+.video-hero .video-hotspot:focus-visible {
+    outline: 2px dashed #c52c2c;
+    outline-offset: 3px;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+========================================== */
 
 @media (max-width: 700px) {
 
-    .video-hotspot .hotspot-label {
-        font-size: 9px !important;
-        padding: 7px 9px !important;
+    .video-hero .video-hotspot .hotspot-label {
+        font-size: 11px !important;
+        max-width: 150px;
+        white-space: nowrap;
     }
 
-    .brain-hotspot .hotspot-label {
+    /* Brain */
+    .video-hero .brain-hotspot .hotspot-label {
         left: 50% !important;
-        top: 100% !important;
+        right: auto !important;
+        top: calc(100% + 8px) !important;
+        transform: translate(-50%, 5px);
     }
 
-    .bag-hotspot .hotspot-label {
-        left: 100% !important;
+    .video-hero .brain-hotspot:hover .hotspot-label,
+    .video-hero .brain-hotspot:focus-visible .hotspot-label {
+        transform: translate(-50%, 0);
     }
 
+    /* Laptop */
+    .video-hero .laptop-hotspot .hotspot-label {
+        left: 50% !important;
+        bottom: calc(100% + 8px) !important;
+        top: auto !important;
+        transform: translate(-50%, 5px);
+    }
+
+    .video-hero .laptop-hotspot:hover .hotspot-label,
+    .video-hero .laptop-hotspot:focus-visible .hotspot-label {
+        transform: translate(-50%, 0);
+    }
+
+    /* Bag */
+    .video-hero .bag-hotspot .hotspot-label {
+        left: 50% !important;
+        right: auto !important;
+        top: calc(100% + 8px) !important;
+        transform: translate(-50%, 5px);
+    }
+
+    .video-hero .bag-hotspot:hover .hotspot-label,
+    .video-hero .bag-hotspot:focus-visible .hotspot-label {
+        transform: translate(-50%, 0);
+    }
 }
 
 
