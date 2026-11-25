@@ -30,6 +30,71 @@
  .resume-page .printer-output{height:48px!important}
  .resume-page .printer-controls{right:14px!important;top:16px!important}
 }
+
+/* Refined sculptural printer + a non-interactive, clickable paper preview */
+.resume-page .printer-scene { height: 550px!important; width:min(100%,800px)!important; }
+.resume-page .printer-paper {
+  display:block!important; position:relative!important; z-index:3!important;
+  flex:0 0 350px!important; width:53%!important; height:350px!important;
+  color:#242321!important; text-decoration:none!important; cursor:pointer!important;
+  overflow:hidden!important; border:1px solid #d7d0c5!important;
+  box-shadow:0 15px 30px rgba(0,0,0,.24),0 3px 6px rgba(0,0,0,.12),inset 0 0 0 5px #fff!important;
+  transform:translateZ(28px)!important; transition:transform .25s ease,box-shadow .25s ease!important;
+}
+.resume-page .printer-paper:hover {
+  transform:translateY(-7px) translateZ(34px)!important;
+  box-shadow:0 22px 38px rgba(0,0,0,.27),0 3px 6px rgba(0,0,0,.12),inset 0 0 0 5px #fff!important;
+}
+.resume-page .printer-paper-preview {
+  position:absolute!important; inset:0!important; padding:25px 25px 18px!important;
+  display:flex!important; flex-direction:column!important; background:linear-gradient(135deg,#fff 0%,#fbfaf7 100%)!important;
+  pointer-events:none!important; text-align:left!important;
+}
+.paper-preview-top { display:flex; justify-content:space-between; gap:8px; font:600 7px var(--mono); letter-spacing:.08em; color:#746d64; }
+.paper-preview-rule { height:2px; margin:12px 0 18px; background:#c92c2c; width:100%; }
+.paper-preview-heading { font:400 25px/.98 var(--display); letter-spacing:-.06em; color:#262320; }
+.paper-preview-heading strong { color:#c92c2c; font-weight:700; }
+.paper-preview-lines { display:grid; gap:6px; margin:16px 0 18px; }
+.paper-preview-lines i { display:block; height:3px; width:92%; background:#e8e4de; border-radius:3px; }
+.paper-preview-lines i:nth-child(2) { width:83%; }
+.paper-preview-lines i:nth-child(3) { width:89%; }
+.paper-preview-lines i:nth-child(4) { width:64%; }
+.paper-preview-lines.short { margin:10px 0 16px; }
+.paper-preview-lines.short i { width:88%; }
+.paper-preview-section { font:600 7px var(--mono); letter-spacing:.1em; color:#a52b2b; border-bottom:1px solid #e5ded4; padding-bottom:5px; }
+.paper-preview-accent { position:absolute; right:25px; bottom:22px; width:32px; height:32px; border:5px solid #c92c2c; border-radius:50%; opacity:.85; }
+.resume-page .printer-machine {
+  background:linear-gradient(145deg,#565653 0%,#333331 42%,#1d1d1c 100%)!important;
+  border:1px solid #777570!important; border-top-color:#aaa8a2!important;
+  border-radius:34px 34px 22px 22px!important;
+  box-shadow:0 35px 42px rgba(22,19,16,.32),0 9px 0 #171716, inset 0 3px 0 rgba(255,255,255,.28),inset 0 -12px 18px rgba(0,0,0,.42)!important;
+}
+.resume-page .printer-top-slot { background:linear-gradient(#090909,#242423)!important; box-shadow:inset 0 4px 7px #000,0 1px 0 rgba(255,255,255,.22)!important; }
+.resume-page .printer-front {
+  background:linear-gradient(145deg,#65645f 0%,#454440 48%,#2d2c29 100%)!important;
+  border:1px solid rgba(255,255,255,.2)!important;
+  box-shadow:inset 0 2px 5px rgba(255,255,255,.16),inset 0 -8px 14px rgba(0,0,0,.25),0 3px 8px rgba(0,0,0,.22)!important;
+}
+.resume-page .printer-brand { left:28px!important; top:20px!important; color:#e8e3da!important; letter-spacing:.14em!important; }
+.resume-page .printer-brand span { color:#d4c9b9!important; font:500 8px var(--mono)!important; letter-spacing:.16em!important; }
+.resume-page .printer-display { color:#d0c8bb!important; }
+.resume-page .printer-output {
+  background:linear-gradient(180deg,#151514,#383733)!important;
+  border-color:#171716!important; box-shadow:inset 0 8px 14px rgba(0,0,0,.65),0 -1px 0 rgba(255,255,255,.18)!important;
+}
+.resume-page .printer-output-shadow { background:rgba(255,255,255,.18)!important; }
+.resume-page .printer-controls span { background:#a7a197!important; }
+.resume-page .printer-controls span:first-child { background:#c92c2c!important; }
+.resume-page .printer-foot { background:linear-gradient(#3a3936,#171716)!important; }
+@media(max-width:600px) {
+ .resume-page .printer-scene { height:410px!important; }
+ .resume-page .printer-paper { flex-basis:245px!important; width:68%!important; height:245px!important; }
+ .resume-page .printer-paper-preview { padding:18px 17px 14px!important; }
+ .paper-preview-heading { font-size:19px; }
+ .paper-preview-top { font-size:6px; }
+ .resume-page .printer-machine { flex-basis:175px!important; height:175px!important; min-height:175px!important; }
+ .resume-page .printer-brand { left:14px!important; top:15px!important; }
+}
 </style>
 </head>
 <body><div class="cursor-dot" aria-hidden="true"></div>
@@ -39,16 +104,24 @@
   <section class="page-hero resume-hero"><p class="eyebrow">THE QUICK READ</p><h1>One page.<br><em>Many directions.</em></h1><p>Here's the formal-ish version. The work is where the personality lives.</p></section>
   <section class="printer-stage" aria-label="Resume preview and actions">
     <div class="printer-scene">
-      <div class="printer-paper">
-        <div class="printer-paper-preview">
-          <iframe src="./keshav-resume.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" title="Preview of the first page of Keshav Chikkamath's resume"></iframe>
+      <a class="printer-paper" href="./keshav-resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the full resume PDF in a new tab">
+        <div class="printer-paper-preview" aria-hidden="true">
+          <div class="paper-preview-top"><span>KESHAV CHIKKAMATH</span><span>RESUME / 2026</span></div>
+          <div class="paper-preview-rule"></div>
+          <div class="paper-preview-heading">A little about<br><strong>what I do.</strong></div>
+          <div class="paper-preview-lines"><i></i><i></i><i></i><i></i></div>
+          <div class="paper-preview-section">EXPERIENCE &amp; SELECTED WORK</div>
+          <div class="paper-preview-lines short"><i></i><i></i><i></i></div>
+          <div class="paper-preview-section">EDUCATION &amp; RECOGNITION</div>
+          <div class="paper-preview-lines"><i></i><i></i></div>
+          <span class="paper-preview-accent"></span>
         </div>
-      </div>
+      </a>
       <div class="printer-machine">
         <div class="printer-top-slot"></div>
         <div class="printer-display"><span class="printer-status-light"></span><span>READY TO PRINT</span><span class="printer-display-icon">⌁</span></div>
         <div class="printer-front">
-          <div class="printer-brand">KC <span>PRINT STUDIO</span></div>
+          <div class="printer-brand"><span>DOCUMENT OUTPUT</span></div>
           <div class="printer-output"><div class="printer-output-shadow"></div></div>
           <div class="printer-controls"><span></span><span></span><span></span></div>
         </div>
