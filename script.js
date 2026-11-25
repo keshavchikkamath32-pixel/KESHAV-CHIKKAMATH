@@ -83,9 +83,9 @@ document.addEventListener("DOMContentLoaded", () => {
       body: "Managed a Pan–North Karnataka event for 10th-standard students end to end. Responsibilities included approaching potential sponsors, communicating the event’s value, supporting sponsorship outreach, planning advertising and promotion, public relations, logistics and execution."
     },
     tedx: {
-      label: "TEDx / COLLEGE INVOLVEMENT",
-      title: "Pre-marketing team.",
-      body: "I was part of the TEDx Pre-Marketing Team at college."
+      label: "TEDx – PRE-MARKETING TEAM",
+      title: "Building awareness ahead of the event.",
+      body: "Contributed to the pre-marketing activities for a TEDx event organised at college, supporting its promotion and outreach. Played a part in building awareness and generating interest ahead of the event."
     },
     classroom: {
       label: "COLLEGE CLASSROOM PAGE / SOCIAL MEDIA MANAGEMENT",
