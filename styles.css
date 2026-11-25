@@ -1997,3 +1997,116 @@ body.portfolio-inner-body .contact-page .contact-links a:hover span { color: #ff
 @media (prefers-reduced-motion: reduce) {
   .contact-symbol { animation: none !important; }
 }
+
+
+/* CONTACT PAGE: more character in the contact tiles + clear scroll invitation. */
+body.portfolio-inner-body .contact-page .contact-links {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 22px);
+}
+body.portfolio-inner-body .contact-page .contact-links a {
+  min-width: 0;
+  min-height: 150px;
+  padding: clamp(20px, 2.4vw, 30px);
+  border-radius: 30px 30px 10px 30px;
+}
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(2) {
+  border-radius: 12px 32px 32px 32px;
+}
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(3) {
+  border-radius: 32px 12px 32px 32px;
+}
+body.portfolio-inner-body .contact-page .contact-links a b {
+  overflow-wrap: anywhere;
+}
+body.portfolio-inner-body .contact-page .contact-scroll-prompt {
+  position: fixed;
+  right: clamp(16px, 4vw, 54px);
+  bottom: 22px;
+  z-index: 30;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: min(290px, calc(100vw - 32px));
+  padding: 13px 18px 12px;
+  color: #fffaf1;
+  text-decoration: none;
+  font: 600 10px/1.35 var(--mono);
+  letter-spacing: .055em;
+  background: rgba(35,32,30,.88);
+  border: 1px solid rgba(255,250,241,.3);
+  border-left: 3px solid #c92c2c;
+  border-radius: 20px 20px 20px 6px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+body.portfolio-inner-body .contact-page .contact-scroll-prompt span {
+  color: #f07870;
+  font-size: 9px;
+  letter-spacing: .09em;
+}
+body.portfolio-inner-body .contact-page .contact-scroll-prompt:hover,
+body.portfolio-inner-body .contact-page .contact-scroll-prompt:focus-visible {
+  transform: translateY(-4px);
+  background: rgba(201,44,44,.94);
+  border-color: rgba(255,250,241,.55);
+  outline: none;
+}
+body.portfolio-inner-body .contact-page .contact-scroll-prompt:hover span,
+body.portfolio-inner-body .contact-page .contact-scroll-prompt:focus-visible span {
+  color: #fffaf1;
+}
+@media (max-width: 700px) {
+  body.portfolio-inner-body .contact-page .contact-links {
+    grid-template-columns: 1fr;
+  }
+  body.portfolio-inner-body .contact-page .contact-links a {
+    min-height: 120px;
+  }
+  body.portfolio-inner-body .contact-page .contact-scroll-prompt {
+    right: 14px;
+    bottom: 14px;
+    padding: 11px 14px;
+  }
+}
+
+/* Keep every interior page vertically scrollable but never horizontally scrollable.
+   Clip off-canvas decoration at the viewport; retain the original section layouts. */
+@supports (overflow: clip) {
+  html:has(body.portfolio-inner-body) { overflow-x: clip; }
+  body.portfolio-inner-body { overflow-x: clip; }
+}
+body.portfolio-inner-body .inner-page,
+body.portfolio-inner-body .site-header,
+body.portfolio-inner-body .site-footer {
+  max-width: 100%;
+}
+body.portfolio-inner-body img,
+body.portfolio-inner-body video,
+body.portfolio-inner-body iframe {
+  max-width: 100%;
+}
+body.portfolio-inner-body .work-page .laptop-base,
+body.portfolio-inner-body .laptop-base {
+  width: 100%;
+  margin-left: 0;
+}
+body.portfolio-inner-body .printer-stage,
+body.portfolio-inner-body .printer-scene {
+  max-width: 100%;
+}
+@media (max-width: 700px) {
+  body.portfolio-inner-body .reel-grid,
+  body.portfolio-inner-body .evidence-grid,
+  body.portfolio-inner-body .folder-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  body.portfolio-inner-body .desktop,
+  body.portfolio-inner-body .desktop-main,
+  body.portfolio-inner-body .project-window {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
