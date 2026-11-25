@@ -2058,7 +2058,7 @@ body.portfolio-inner-body .contact-page .contact-scroll-prompt:hover span,
 body.portfolio-inner-body .contact-page .contact-scroll-prompt:focus-visible span {
   color: #fffaf1;
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   body.portfolio-inner-body .contact-page .contact-links {
     grid-template-columns: 1fr;
   }
@@ -2098,11 +2098,6 @@ body.portfolio-inner-body .printer-scene {
   max-width: 100%;
 }
 @media (max-width: 700px) {
-  body.portfolio-inner-body .reel-grid,
-  body.portfolio-inner-body .evidence-grid,
-  body.portfolio-inner-body .folder-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
   body.portfolio-inner-body .desktop,
   body.portfolio-inner-body .desktop-main,
   body.portfolio-inner-body .project-window {
