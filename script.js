@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     green: {
       label: "GREEN PEDDLE / CONTENT MARKETING",
       title: "Building a page from zero.",
-      body: "Helped build Green Peddle’s Instagram presence from the ground up through content planning, creative concepts, reels, carousel posts and sustainability-focused messaging. The work introduced the marketplace’s purpose and helped people discover the initiative."
+      body: "Helped build Green Peddle’s Instagram presence from the ground up through content planning, creative concepts, reels, carousel posts and sustainability-focused messaging. The work introduced the marketplace’s purpose and helped people discover the initiative.", credentials: true
     },
     innovate: {
       label: "INNOVATE CONNECTA / CONTENT MARKETING",
@@ -98,9 +98,9 @@ document.addEventListener("DOMContentLoaded", () => {
     clickSound();
     const p = projects[button.dataset.project];
     if (!p || !panel) return;
-    const credentials = "";
+    const credentials = p.credentials ? `<div class="credential-panel"><span class="eyebrow">SUPPORTING DOCUMENTS</span><p>Explore the Green Peddle internship certificate and recommendation letter.</p><div class="credential-actions"><a href="https://drive.google.com/drive/folders/1PcYuWG6kMgSG5OdiAA1MBWjjp_q0c2lT?usp=sharing" target="_blank" rel="noopener noreferrer">View certificate & recommendation letter ↗</a></div></div>` : "";
     const metrics = button.dataset.project === "classroom" ? `<div class="reach-stats"><div><b>100K+</b><small>ONE REEL</small></div><div><b>20K–30K</b><small>OTHER REELS</small></div><div><b>Beyond</b><small>FOLLOWER COUNT</small></div></div>` : "";
-    panel.innerHTML = `<button class="close-project" aria-label="Close project">×</button><span class="eyebrow">${p.label}</span><h3>${p.title}</h3><p>${p.body}</p>${metrics}<span class="project-footnote">CASE FILE / SELECTED WORK</span>`;
+    panel.innerHTML = `<button class="close-project" aria-label="Close project">×</button><span class="eyebrow">${p.label}</span><h3>${p.title}</h3><p>${p.body}</p>${metrics}${credentials}<span class="project-footnote">CASE FILE / SELECTED WORK</span>`;
     panel.classList.add("project-open");
     panel.querySelector(".close-project").addEventListener("click", () => panel.classList.remove("project-open"));
   }));
