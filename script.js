@@ -1,5 +1,5 @@
 // Keshav Chikkamath portfolio interactions.
-// Replace the Instagram profile URLs in the reel cards with individual reel URLs as you add them.
+// Individual Instagram reel destinations are maintained directly in creativity.html.
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-year]").forEach(el => el.textContent = new Date().getFullYear());
 
