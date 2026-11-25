@@ -853,3 +853,84 @@
   .expertise-card { transition: none; }
   .expertise-card:hover { transform: none; }
 }
+
+
+/* Final About-page polish: nudge only the head hit-area left and unify
+   the expertise cards with the hero's red / charcoal / cream / white palette. */
+.video-hero .brain-hotspot {
+  left: 60% !important;
+}
+@media (max-width: 800px) {
+  .video-hero .brain-hotspot {
+    left: 40% !important;
+  }
+}
+
+/* Editorial, dimensional card treatment — crisp text, no scaling or rotation. */
+.expertise-grid {
+  perspective: 1500px;
+}
+.expertise-card {
+  border: 1px solid rgba(255,255,255,.72);
+  border-top-color: rgba(255,255,255,.95);
+  border-left-color: rgba(255,255,255,.84);
+  border-radius: 18px;
+  box-shadow:
+    0 4px 0 rgba(23,22,21,.14),
+    0 16px 28px rgba(23,22,21,.16),
+    inset 0 1px 0 rgba(255,255,255,.72);
+  transition: transform .25s ease, box-shadow .25s ease;
+  backface-visibility: hidden;
+}
+.expertise-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 7px 0 rgba(23,22,21,.16),
+    0 25px 36px rgba(23,22,21,.22),
+    inset 0 1px 0 rgba(255,255,255,.9);
+  filter: none;
+}
+.expertise-card:before {
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.24), transparent 46%),
+    radial-gradient(circle at 100% 0%, rgba(255,255,255,.28), transparent 38%);
+}
+.expertise-card:after {
+  border-width: 2px;
+  opacity: .13;
+}
+.expertise-pink {
+  background: linear-gradient(145deg, #292725, #111110);
+  color: #fff;
+  border-color: rgba(255,255,255,.2);
+  border-top-color: rgba(255,255,255,.42);
+}
+.expertise-pink > span, .expertise-pink h3, .expertise-pink p { color: #fff; }
+.expertise-pink > span { color: #f0b9b3; }
+.expertise-blue {
+  background: linear-gradient(145deg, #d83a35, #a91f25);
+  color: #fff;
+  border-color: rgba(255,255,255,.38);
+}
+.expertise-blue > span, .expertise-blue h3, .expertise-blue p { color: #fff; }
+.expertise-blue > span { color: #ffe0d9; }
+.expertise-yellow {
+  background: linear-gradient(145deg, #fffaf1, #e8ddcf);
+  color: #171615;
+  border-color: rgba(255,255,255,.95);
+}
+.expertise-yellow > span, .expertise-yellow h3, .expertise-yellow p { color: #171615; }
+.expertise-lilac {
+  background: linear-gradient(145deg, #f7f4ed, #ded4c7);
+  color: #171615;
+  border-color: rgba(255,255,255,.95);
+}
+.expertise-lilac > span, .expertise-lilac h3, .expertise-lilac p { color: #171615; }
+.expertise-yellow > span, .expertise-lilac > span { color: #a52224; }
+.expertise-yellow h3, .expertise-lilac h3 { text-shadow: 0 1px 0 rgba(255,255,255,.75); }
+@media (max-width: 650px) {
+  .expertise-card:hover { transform: translateY(-5px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .expertise-card, .expertise-card:hover { transform: none; }
+}
