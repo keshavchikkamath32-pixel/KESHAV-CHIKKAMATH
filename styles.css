@@ -1170,3 +1170,64 @@
   .explore-card, .explore-card:after, .explore-symbol, .explore-arrow { transition: none; }
   .explore-card:hover { transform: none; }
 }
+
+
+/* Match the second scroll invitation to the first hero invitation exactly. */
+.expertise-scroll {
+  z-index: 8;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 15px 10px 17px;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 999px;
+  background: rgba(23,22,21,.76);
+  color: #fffaf1;
+  box-shadow: 0 5px 0 rgba(201,44,44,.9), 0 12px 24px rgba(0,0,0,.18);
+  font: 600 10px var(--mono);
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background .2s ease, box-shadow .2s ease;
+}
+.expertise-scroll:hover {
+  background: rgba(201,44,44,.94);
+  box-shadow: 0 5px 0 rgba(23,22,21,.85), 0 14px 26px rgba(0,0,0,.2);
+  transform: translateY(2px);
+}
+.expertise-scroll .scroll-arrow {
+  display: inline-block;
+  color: #ffaaa2;
+  font-size: 17px;
+  line-height: .8;
+  animation: scroll-nudge 1.25s ease-in-out infinite;
+}
+@media (max-width: 520px) {
+  .expertise-scroll {
+    font-size: 9px;
+    padding: 9px 13px;
+    white-space: nowrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .expertise-scroll .scroll-arrow { animation: none; }
+}
+
+/* Creativity hotspot: requested 35% position. Keep the label clickable
+   while the pointer travels from the head target onto the dialogue. */
+.video-hero .brain-hotspot {
+  left: 35% !important;
+}
+@media (max-width: 800px) {
+  .video-hero .brain-hotspot {
+    left: 35% !important;
+  }
+}
+.video-hero .brain-hotspot > .hotspot-label {
+  pointer-events: auto !important;
+}
+.video-hero .brain-hotspot.pointer-inside-head > .hotspot-label {
+  pointer-events: auto !important;
+}
