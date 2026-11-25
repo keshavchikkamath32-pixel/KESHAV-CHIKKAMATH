@@ -2492,126 +2492,141 @@ body.portfolio-inner-body .creativity-page .reel-embed-card .instagram-media > a
 }
 
 
-/* Compact film-strip teaser linking to the full Instagram portfolio. */
-body.portfolio-inner-body .creativity-page .film-teaser {
+/* Vintage cinema ticket teaser linking to the full Instagram portfolio. */
+body.portfolio-inner-body .creativity-page .movie-ticket {
   position: relative;
-  display: flex;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
-  gap: clamp(10px, 2vw, 24px);
+  gap: clamp(12px, 2.2vw, 28px);
   width: 100%;
   min-width: 0;
   margin-top: 34px;
-  padding: 19px clamp(14px, 2.2vw, 28px);
+  padding: 21px clamp(16px, 2.4vw, 30px);
   overflow: hidden;
   color: #fffaf1;
   text-decoration: none;
-  white-space: nowrap;
   background:
-    radial-gradient(circle, rgba(255,250,241,.58) 0 2px, transparent 2.6px) left 5px / 22px 7px repeat-x,
-    radial-gradient(circle, rgba(255,250,241,.58) 0 2px, transparent 2.6px) left calc(100% - 5px) / 22px 7px repeat-x,
-    linear-gradient(105deg, #292725 0%, #151413 72%, #30201f 100%);
-  border: 1px solid rgba(255,250,241,.22);
-  border-left: 4px solid #c92c2c;
-  border-radius: 5px;
-  box-shadow: 0 12px 26px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,250,241,.08);
-  transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
-}
-body.portfolio-inner-body .creativity-page .film-teaser:hover,
-body.portfolio-inner-body .creativity-page .film-teaser:focus-visible {
-  color: #fffaf1;
-  border-color: rgba(240,120,112,.72);
-  border-left-color: #f07870;
-  box-shadow: 0 16px 30px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,250,241,.12);
-  transform: translateY(-3px);
-}
-body.portfolio-inner-body .creativity-page .film-teaser-label {
-  flex: 0 0 auto;
-  color: #f07870;
-  font: 10px var(--mono);
-  letter-spacing: .1em;
-}
-body.portfolio-inner-body .creativity-page .film-teaser-copy {
-  min-width: 0;
-  overflow: hidden;
-  color: #fffaf1;
-  font: 600 clamp(13px, 1.45vw, 17px)/1.2 var(--display);
-  text-overflow: ellipsis;
-}
-body.portfolio-inner-body .creativity-page .film-teaser-link {
-  flex: 0 0 auto;
-  color: #f0b3a6;
-  font: 10px var(--mono);
-  letter-spacing: .045em;
-  text-transform: uppercase;
-}
-@media (max-width: 520px) {
-  body.portfolio-inner-body .creativity-page .film-teaser {
-    gap: 8px;
-    padding: 18px 10px;
-  }
-  body.portfolio-inner-body .creativity-page .film-teaser-label {
-    font-size: 8px;
-    letter-spacing: .04em;
-  }
-  body.portfolio-inner-body .creativity-page .film-teaser-copy {
-    font-size: 12px;
-  }
-  body.portfolio-inner-body .creativity-page .film-teaser-link {
-    font-size: 8px;
-    letter-spacing: 0;
-  }
-}
-
-
-/* Physical-film treatment: bevelled rails, punched sprocket holes and depth. */
-body.portfolio-inner-body .creativity-page .film-teaser {
-  padding: 23px clamp(14px, 2.2vw, 28px);
-  background: linear-gradient(180deg, #4b4844 0%, #292725 13%, #151413 50%, #292321 87%, #4a3834 100%);
+    linear-gradient(90deg, transparent 0 73%, rgba(255,250,241,.045) 73% 100%),
+    linear-gradient(145deg, #393431 0%, #201e1c 58%, #141312 100%);
   border: 1px solid rgba(255,250,241,.42);
-  border-left: 4px solid #c92c2c;
-  border-radius: 6px;
+  border-radius: 5px;
   box-shadow:
     0 3px 0 #090909,
-    0 7px 0 rgba(255,250,241,.08),
-    0 14px 25px rgba(0,0,0,.34),
-    inset 0 2px 3px rgba(255,255,255,.22),
-    inset 0 -3px 5px rgba(0,0,0,.55);
-  transform: perspective(900px) rotateX(2deg);
-  transform-origin: center;
+    0 8px 0 rgba(201,44,44,.22),
+    0 17px 28px rgba(0,0,0,.28),
+    inset 0 1px 0 rgba(255,255,255,.18),
+    inset 0 -2px 4px rgba(0,0,0,.45);
+  transform: perspective(1000px) rotateX(1.5deg);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
 }
-body.portfolio-inner-body .creativity-page .film-teaser::before {
+body.portfolio-inner-body .creativity-page .movie-ticket::before,
+body.portfolio-inner-body .creativity-page .movie-ticket::after {
   content: "";
   position: absolute;
   z-index: 0;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 4px 2.7px at 11px 6px, rgba(5,5,5,.92) 0 68%, rgba(255,255,255,.26) 78%, transparent 100%) left top / 22px 12px repeat-x,
-    radial-gradient(ellipse 4px 2.7px at 11px 6px, rgba(5,5,5,.92) 0 68%, rgba(255,255,255,.26) 78%, transparent 100%) left bottom / 22px 12px repeat-x;
-  box-shadow: inset 0 5px 5px rgba(255,255,255,.12), inset 0 -5px 5px rgba(0,0,0,.38);
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--paper);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.12);
+  transform: translateY(-50%);
 }
-body.portfolio-inner-body .creativity-page .film-teaser::after {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  inset: 11px 2px;
-  pointer-events: none;
-  border-top: 1px solid rgba(255,250,241,.12);
-  border-bottom: 1px solid rgba(255,250,241,.12);
-  box-shadow: 0 1px 0 rgba(0,0,0,.35), 0 -1px 0 rgba(255,255,255,.04);
-}
-body.portfolio-inner-body .creativity-page .film-teaser > span {
+body.portfolio-inner-body .creativity-page .movie-ticket::before { left: -13px; }
+body.portfolio-inner-body .creativity-page .movie-ticket::after { right: -13px; }
+body.portfolio-inner-body .creativity-page .movie-ticket > span {
   position: relative;
   z-index: 1;
 }
-body.portfolio-inner-body .creativity-page .film-teaser:hover,
-body.portfolio-inner-body .creativity-page .film-teaser:focus-visible {
-  transform: perspective(900px) rotateX(0deg) translateY(-4px);
+body.portfolio-inner-body .creativity-page .ticket-admit {
+  display: grid;
+  place-items: center;
+  min-width: 58px;
+  min-height: 58px;
+  padding: 8px;
+  color: #fffaf1;
+  background: linear-gradient(145deg, #c92c2c, #8e1e1e);
+  border: 1px solid rgba(255,250,241,.48);
+  border-radius: 50%;
+  box-shadow: 0 4px 9px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.22);
+  font: 700 10px/1.05 var(--mono);
+  letter-spacing: .07em;
+  text-align: center;
+}
+body.portfolio-inner-body .creativity-page .ticket-main {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+body.portfolio-inner-body .creativity-page .ticket-kicker {
+  color: #f07870;
+  font: 10px var(--mono);
+  letter-spacing: .13em;
+}
+body.portfolio-inner-body .creativity-page .ticket-title {
+  color: #fffaf1;
+  font: 700 clamp(14px, 1.8vw, 21px)/1.12 var(--display);
+  letter-spacing: -.035em;
+}
+body.portfolio-inner-body .creativity-page .ticket-stub {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding-left: clamp(12px, 2vw, 24px);
+  border-left: 1px dashed rgba(255,250,241,.46);
+}
+body.portfolio-inner-body .creativity-page .ticket-serial {
+  color: rgba(255,250,241,.55);
+  font: 9px var(--mono);
+  letter-spacing: .12em;
+}
+body.portfolio-inner-body .creativity-page .ticket-cta {
+  color: #f0b3a6;
+  font: 10px var(--mono);
+  letter-spacing: .035em;
+  white-space: nowrap;
+}
+body.portfolio-inner-body .creativity-page .movie-ticket:hover,
+body.portfolio-inner-body .creativity-page .movie-ticket:focus-visible {
+  color: #fffaf1;
+  border-color: rgba(240,120,112,.85);
   box-shadow:
     0 4px 0 #090909,
-    0 8px 0 rgba(255,250,241,.08),
-    0 19px 30px rgba(0,0,0,.38),
-    inset 0 2px 3px rgba(255,255,255,.24),
-    inset 0 -3px 5px rgba(0,0,0,.55);
+    0 9px 0 rgba(201,44,44,.25),
+    0 22px 34px rgba(0,0,0,.34),
+    inset 0 1px 0 rgba(255,255,255,.22),
+    inset 0 -2px 4px rgba(0,0,0,.45);
+  transform: perspective(1000px) rotateX(0deg) translateY(-4px);
+}
+@media (max-width: 560px) {
+  body.portfolio-inner-body .creativity-page .movie-ticket {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 12px;
+    padding: 18px 16px;
+  }
+  body.portfolio-inner-body .creativity-page .ticket-admit {
+    min-width: 48px;
+    min-height: 48px;
+    font-size: 8px;
+  }
+  body.portfolio-inner-body .creativity-page .ticket-title {
+    font-size: 14px;
+  }
+  body.portfolio-inner-body .creativity-page .ticket-stub {
+    grid-column: 2;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 0 0;
+    border-left: 0;
+    border-top: 1px dashed rgba(255,250,241,.42);
+  }
+  body.portfolio-inner-body .creativity-page .ticket-cta {
+    font-size: 9px;
+  }
 }
