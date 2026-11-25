@@ -2254,3 +2254,52 @@ body.portfolio-inner-body .work-page .macbook-base span {
     bottom: 2px; height: 6px;
   }
 }
+
+
+/* FINAL CONTACT POLISH: centered scroll invitation + clearer palette-led cards.
+   Existing card marks/icons remain untouched. */
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(1) {
+  background: linear-gradient(145deg, rgba(244,238,228,.19), rgba(244,238,228,.075));
+  border-color: rgba(244,238,228,.48);
+  box-shadow: 0 16px 34px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,250,241,.2);
+}
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(2) {
+  background: linear-gradient(145deg, rgba(255,250,241,.14), rgba(116,110,102,.17));
+  border-color: rgba(255,250,241,.42);
+  box-shadow: 0 16px 34px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,250,241,.18);
+}
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(3) {
+  background: linear-gradient(145deg, rgba(201,44,44,.25), rgba(75,27,27,.2));
+  border-color: rgba(240,120,112,.48);
+  box-shadow: 0 16px 34px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,250,241,.16);
+}
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(1)::before {
+  color: rgba(244,238,228,.19);
+}
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(2)::before {
+  color: rgba(255,250,241,.16);
+}
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(3)::before {
+  color: rgba(240,120,112,.24);
+}
+body.portfolio-inner-body .contact-page .contact-scroll-prompt {
+  left: 50%;
+  right: auto;
+  bottom: 22px;
+  transform: translateX(-50%);
+  text-align: center;
+  align-items: center;
+  white-space: nowrap;
+}
+body.portfolio-inner-body .contact-page .contact-scroll-prompt:hover,
+body.portfolio-inner-body .contact-page .contact-scroll-prompt:focus-visible {
+  transform: translate(-50%, -4px);
+}
+@media (max-width: 800px) {
+  body.portfolio-inner-body .contact-page .contact-scroll-prompt {
+    left: 50%;
+    right: auto;
+    bottom: 14px;
+    max-width: calc(100vw - 28px);
+  }
+}
