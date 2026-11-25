@@ -2490,3 +2490,75 @@ body.portfolio-inner-body .creativity-page .reel-embed-card .instagram-media > a
     margin-right: auto;
   }
 }
+
+
+/* Compact film-strip teaser linking to the full Instagram portfolio. */
+body.portfolio-inner-body .creativity-page .film-teaser {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(10px, 2vw, 24px);
+  width: 100%;
+  min-width: 0;
+  margin-top: 34px;
+  padding: 19px clamp(14px, 2.2vw, 28px);
+  overflow: hidden;
+  color: #fffaf1;
+  text-decoration: none;
+  white-space: nowrap;
+  background:
+    radial-gradient(circle, rgba(255,250,241,.58) 0 2px, transparent 2.6px) left 5px / 22px 7px repeat-x,
+    radial-gradient(circle, rgba(255,250,241,.58) 0 2px, transparent 2.6px) left calc(100% - 5px) / 22px 7px repeat-x,
+    linear-gradient(105deg, #292725 0%, #151413 72%, #30201f 100%);
+  border: 1px solid rgba(255,250,241,.22);
+  border-left: 4px solid #c92c2c;
+  border-radius: 5px;
+  box-shadow: 0 12px 26px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,250,241,.08);
+  transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+body.portfolio-inner-body .creativity-page .film-teaser:hover,
+body.portfolio-inner-body .creativity-page .film-teaser:focus-visible {
+  color: #fffaf1;
+  border-color: rgba(240,120,112,.72);
+  border-left-color: #f07870;
+  box-shadow: 0 16px 30px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,250,241,.12);
+  transform: translateY(-3px);
+}
+body.portfolio-inner-body .creativity-page .film-teaser-label {
+  flex: 0 0 auto;
+  color: #f07870;
+  font: 10px var(--mono);
+  letter-spacing: .1em;
+}
+body.portfolio-inner-body .creativity-page .film-teaser-copy {
+  min-width: 0;
+  overflow: hidden;
+  color: #fffaf1;
+  font: 600 clamp(13px, 1.45vw, 17px)/1.2 var(--display);
+  text-overflow: ellipsis;
+}
+body.portfolio-inner-body .creativity-page .film-teaser-link {
+  flex: 0 0 auto;
+  color: #f0b3a6;
+  font: 10px var(--mono);
+  letter-spacing: .045em;
+  text-transform: uppercase;
+}
+@media (max-width: 520px) {
+  body.portfolio-inner-body .creativity-page .film-teaser {
+    gap: 8px;
+    padding: 18px 10px;
+  }
+  body.portfolio-inner-body .creativity-page .film-teaser-label {
+    font-size: 8px;
+    letter-spacing: .04em;
+  }
+  body.portfolio-inner-body .creativity-page .film-teaser-copy {
+    font-size: 12px;
+  }
+  body.portfolio-inner-body .creativity-page .film-teaser-link {
+    font-size: 8px;
+    letter-spacing: 0;
+  }
+}
