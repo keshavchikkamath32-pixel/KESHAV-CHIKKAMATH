@@ -1887,3 +1887,113 @@ body.portfolio-inner-body a.page-scroll-cue:hover span { color: #fffaf1; }
 .work-page .project-window .close-project {
   color: #292725;
 }
+
+
+/* LET'S CONNECT — full-page theme and scroll-reactive contact motifs.
+   Decorative layer only: all existing contact content and layout stay intact. */
+body.portfolio-inner-body .contact-page {
+  position: relative;
+  isolation: isolate;
+}
+body.portfolio-inner-body .contact-page .contact-hero {
+  position: relative;
+  z-index: 1;
+  color: #fffaf1;
+  background:
+    radial-gradient(ellipse at 84% 18%, rgba(201,44,44,.2), transparent 32%),
+    linear-gradient(135deg, #292725 0%, #171615 72%, #24211f 100%);
+  border-top: 7px solid #c92c2c;
+}
+body.portfolio-inner-body .contact-page .contact-hero h1 { color: #fffaf1; }
+body.portfolio-inner-body .contact-page .contact-hero h1 em { color: #f07870; }
+body.portfolio-inner-body .contact-page .contact-hero > p:not(.eyebrow) { color: rgba(255,250,241,.76); }
+body.portfolio-inner-body .contact-page .contact-hero .eyebrow { color: #f07870; }
+body.portfolio-inner-body .contact-page .email-big {
+  color: #fffaf1;
+  border-bottom-color: #f07870;
+}
+body.portfolio-inner-body .contact-page .contact-links {
+  position: relative;
+  z-index: 1;
+}
+body.portfolio-inner-body .contact-page .contact-links a {
+  color: #fffaf1;
+  border-color: rgba(255,250,241,.2);
+  background: rgba(255,250,241,.045);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+  transition: background .22s, border-color .22s, transform .22s;
+}
+body.portfolio-inner-body .contact-page .contact-links a:hover {
+  color: #fff;
+  background: rgba(201,44,44,.78);
+  border-color: rgba(255,250,241,.42);
+}
+body.portfolio-inner-body .contact-page .contact-links span { color: #f07870; }
+body.portfolio-inner-body .contact-page .contact-links a:hover span { color: #fffaf1; }
+
+/* Transparent phone and email symbols drift at different rates with page scroll. */
+.contact-orbitals {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.contact-symbol {
+  position: absolute;
+  display: block;
+  color: rgba(240,120,112,.16);
+  font-family: var(--display);
+  line-height: 1;
+  user-select: none;
+  will-change: transform;
+}
+.phone-symbol {
+  top: 17%;
+  right: 8%;
+  font-size: clamp(100px,17vw,220px);
+  transform: rotate(-18deg);
+  animation: contact-phone-drift 1s linear both;
+  animation-timeline: scroll(root block);
+}
+.mail-symbol {
+  top: 56%;
+  left: 7%;
+  font-size: clamp(105px,16vw,205px);
+  color: rgba(255,250,241,.13);
+  transform: rotate(12deg);
+  animation: contact-mail-drift 1s linear both;
+  animation-timeline: scroll(root block);
+}
+.phone-small {
+  top: 78%;
+  right: 22%;
+  font-size: clamp(55px,8vw,105px);
+  color: rgba(201,44,44,.2);
+  animation: contact-phone-drift 1s linear both;
+  animation-timeline: scroll(root block);
+}
+.mail-small {
+  top: 35%;
+  left: 42%;
+  font-size: clamp(50px,7vw,88px);
+  color: rgba(255,250,241,.09);
+  animation: contact-mail-drift 1s linear both;
+  animation-timeline: scroll(root block);
+}
+@keyframes contact-phone-drift {
+  from { translate: 0 110px; rotate: -12deg; }
+  to { translate: 0 -230px; rotate: 24deg; }
+}
+@keyframes contact-mail-drift {
+  from { translate: 0 -100px; rotate: 14deg; }
+  to { translate: 0 210px; rotate: -20deg; }
+}
+@media (max-width: 700px) {
+  .phone-symbol { right: -4%; }
+  .mail-symbol { left: -5%; }
+  .mail-small { left: 65%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-symbol { animation: none !important; }
+}
