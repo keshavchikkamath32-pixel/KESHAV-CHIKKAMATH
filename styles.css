@@ -2088,10 +2088,10 @@ body.portfolio-inner-body video,
 body.portfolio-inner-body iframe {
   max-width: 100%;
 }
-body.portfolio-inner-body .work-page .laptop-base,
-body.portfolio-inner-body .laptop-base {
-  width: 100%;
-  margin-left: 0;
+/* Keep the MacBook's original wider base: it gives the screen a proper laptop deck. */
+body.portfolio-inner-body .work-page .macbook-base {
+  width: 108%;
+  margin-left: -4%;
 }
 body.portfolio-inner-body .printer-stage,
 body.portfolio-inner-body .printer-scene {
@@ -2103,5 +2103,154 @@ body.portfolio-inner-body .printer-scene {
   body.portfolio-inner-body .project-window {
     min-width: 0;
     max-width: 100%;
+  }
+}
+
+
+/* FINAL CONTACT CARD REDESIGN — make the three destinations read like distinct
+   floating message panels rather than ordinary rectangular link tiles. */
+body.portfolio-inner-body .contact-page .contact-links {
+  align-items: start;
+  padding-top: 58px;
+  padding-bottom: 58px;
+}
+body.portfolio-inner-body .contact-page .contact-links a {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 184px;
+  padding: 30px 28px;
+  background: linear-gradient(145deg, rgba(255,250,241,.105), rgba(255,250,241,.025));
+  border: 1px solid rgba(255,250,241,.3);
+  box-shadow: 0 16px 34px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.12);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  transition: transform .25s ease, background .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(1) {
+  border-radius: 34px 34px 34px 9px;
+  transform: rotate(-1.2deg);
+}
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(2) {
+  border-radius: 9px 38px 9px 38px;
+  transform: translateY(15px) rotate(1deg);
+}
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(3) {
+  border-radius: 42px 9px 42px 42px;
+  transform: rotate(-.6deg);
+}
+body.portfolio-inner-body .contact-page .contact-links a::before {
+  position: absolute;
+  z-index: -1;
+  right: 16px;
+  top: -25px;
+  font: 700 112px/.9 var(--display);
+  letter-spacing: -.1em;
+  color: rgba(255,250,241,.09);
+  pointer-events: none;
+}
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(1)::before { content: "@"; }
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(2)::before { content: "in"; font-size: 104px; }
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(3)::before { content: "◎"; font-size: 118px; }
+body.portfolio-inner-body .contact-page .contact-links a::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 22px;
+  height: 22px;
+  bottom: -9px;
+  left: 30px;
+  background: rgba(255,250,241,.08);
+  border-right: 1px solid rgba(255,250,241,.25);
+  border-bottom: 1px solid rgba(255,250,241,.25);
+  transform: rotate(45deg);
+}
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(2)::after {
+  left: auto;
+  right: 34px;
+  bottom: -9px;
+}
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(3)::after {
+  left: 48px;
+  bottom: -9px;
+}
+body.portfolio-inner-body .contact-page .contact-links a:hover,
+body.portfolio-inner-body .contact-page .contact-links a:focus-visible {
+  color: #fff;
+  background: linear-gradient(145deg, rgba(201,44,44,.92), rgba(91,25,25,.88));
+  border-color: rgba(255,250,241,.68);
+  box-shadow: 0 22px 42px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.2);
+  outline: none;
+}
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(1):hover,
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(1):focus-visible {
+  transform: translateY(-7px) rotate(-1.2deg);
+}
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(2):hover,
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(2):focus-visible {
+  transform: translateY(7px) rotate(1deg);
+}
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(3):hover,
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(3):focus-visible {
+  transform: translateY(-7px) rotate(-.6deg);
+}
+body.portfolio-inner-body .contact-page .contact-links a > span,
+body.portfolio-inner-body .contact-page .contact-links a > b {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 800px) {
+  body.portfolio-inner-body .contact-page .contact-links { padding-top: 28px; }
+  body.portfolio-inner-body .contact-page .contact-links a,
+  body.portfolio-inner-body .contact-page .contact-links a:nth-child(1),
+  body.portfolio-inner-body .contact-page .contact-links a:nth-child(2),
+  body.portfolio-inner-body .contact-page .contact-links a:nth-child(3) {
+    min-height: 132px;
+    transform: none;
+  }
+}
+
+/* A quiet keyboard hint on the MacBook deck: tiny key rows and a soft trackpad. */
+body.portfolio-inner-body .work-page .macbook-base {
+  height: 24px !important;
+  background: linear-gradient(180deg, #d5d7da 0%, #a6a9ae 42%, #dfe1e4 100%) !important;
+}
+body.portfolio-inner-body .work-page .macbook-base::before {
+  content: "";
+  position: absolute;
+  left: 23%;
+  top: 3px;
+  width: 54%;
+  height: 7px;
+  border-radius: 2px;
+  opacity: .34;
+  background:
+    repeating-linear-gradient(90deg, rgba(55,58,63,.8) 0 5px, transparent 5px 8px),
+    repeating-linear-gradient(180deg, transparent 0 2px, rgba(55,58,63,.55) 2px 3px);
+  pointer-events: none;
+}
+body.portfolio-inner-body .work-page .macbook-base::after {
+  content: "";
+  position: absolute;
+  left: 39%;
+  bottom: 3px;
+  width: 22%;
+  height: 8px;
+  border: 1px solid rgba(75,78,83,.2);
+  border-radius: 3px 3px 5px 5px;
+  background: rgba(255,255,255,.13);
+  pointer-events: none;
+}
+body.portfolio-inner-body .work-page .macbook-base span {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 650px) {
+  body.portfolio-inner-body .work-page .macbook-base { height: 19px !important; }
+  body.portfolio-inner-body .work-page .macbook-base::before {
+    left: 18%; width: 64%; height: 5px; top: 2px;
+  }
+  body.portfolio-inner-body .work-page .macbook-base::after {
+    bottom: 2px; height: 6px;
   }
 }
