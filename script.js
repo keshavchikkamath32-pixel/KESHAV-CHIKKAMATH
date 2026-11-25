@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     classroom: {
       label: "COLLEGE CLASSROOM PAGE / SOCIAL MEDIA MANAGEMENT",
       title: "A small audience. Big reach.",
-      body: "Managed the social media presence for the college classroom page, creating and publishing short-form content that travelled well beyond the page’s follower base. Some reels crossed 100K+ views, with others reaching 90K+ and 60K+ views. The standout story is the reach achieved relative to the size of the audience."
+      body: "Managed the college classroom social media page and created short-form content that reached well beyond its follower base. One reel crossed 100K views, while other reels received roughly 20K–30K views. The page’s traction showed how engaging content can travel beyond the size of its existing audience."
     }
   };
   const panel = document.querySelector("#project-window");
@@ -98,8 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
     clickSound();
     const p = projects[button.dataset.project];
     if (!p || !panel) return;
-    const credentials = p.credentials ? `<div class="credential-panel"><span class="eyebrow">SUPPORTING DOCUMENTS</span><p>Green Peddle certificate and recommendation letter will be available here.</p><div class="credential-actions"><button type="button" disabled>Certificate · awaiting upload</button><button type="button" disabled>Recommendation letter · awaiting upload</button></div></div>` : "";
-    const metrics = button.dataset.project === "classroom" ? `<div class="reach-stats"><div><b>100K+</b><small>REEL VIEWS</small></div><div><b>90K+</b><small>REEL VIEWS</small></div><div><b>60K+</b><small>REEL VIEWS</small></div></div>` : "";
+    const credentials = p.credentials ? `<div class="credential-panel"><span class="eyebrow">SUPPORTING DOCUMENTS</span><p>Explore the Green Peddle internship certificate and recommendation letter.</p><div class="credential-actions"><a href="https://drive.google.com/drive/folders/1PcYuWG6kMgSG5OdiAA1MBWjjp_q0c2lT?usp=sharing" target="_blank" rel="noopener noreferrer">View certificate & recommendation letter ↗</a></div></div>` : "";
+    const metrics = button.dataset.project === "classroom" ? `<div class="reach-stats"><div><b>100K+</b><small>ONE REEL</small></div><div><b>20K–30K</b><small>OTHER REELS</small></div><div><b>Beyond</b><small>FOLLOWER COUNT</small></div></div>` : "";
     panel.innerHTML = `<button class="close-project" aria-label="Close project">×</button><span class="eyebrow">${p.label}</span><h3>${p.title}</h3><p>${p.body}</p>${metrics}${credentials}<span class="project-footnote">CASE FILE / SELECTED WORK</span>`;
     panel.classList.add("project-open");
     panel.querySelector(".close-project").addEventListener("click", () => panel.classList.remove("project-open"));
