@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tedx: {
       label: "TEDx / COLLEGE INVOLVEMENT",
       title: "Pre-marketing team.",
-      body: "Part of the TEDx Pre-Marketing Team at college. Additional campaign details, creative assets and exact responsibilities can be added when supplied."
+      body: "I was part of the TEDx Pre-Marketing Team at college."
     },
     classroom: {
       label: "COLLEGE CLASSROOM PAGE / SOCIAL MEDIA MANAGEMENT",
