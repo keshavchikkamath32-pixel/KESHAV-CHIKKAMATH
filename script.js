@@ -55,9 +55,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const showHeadLabel = event => {
       if (event.pointerType !== "touch") headHotspot.classList.add("pointer-inside-head");
     };
+    const label = headHotspot.querySelector(".hotspot-label");
     const hideHeadLabel = () => headHotspot.classList.remove("pointer-inside-head");
     headHotspot.addEventListener("pointerenter", showHeadLabel);
-    headHotspot.addEventListener("pointerleave", hideHeadLabel);
+    headHotspot.addEventListener("pointerleave", event => {
+      // The dialogue sits just outside the hotspot rectangle. Keep it open
+      // when the pointer is moving onto that visible, clickable child.
+      if (label && (event.relatedTarget === label || label.contains(event.relatedTarget))) return;
+      hideHeadLabel();
+    });
     headHotspot.addEventListener("pointerup", hideHeadLabel);
     headHotspot.addEventListener("pointercancel", hideHeadLabel);
     document.addEventListener("pointerdown", event => {
