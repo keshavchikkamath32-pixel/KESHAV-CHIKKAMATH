@@ -782,3 +782,71 @@
  .held-project-window .reach-stats b{font-size:14px}
  .hit-green,.hit-classroom,.hit-laksya,.hit-tedx{top:32%;height:14%}
 }
+
+/* CSS-built MacBook held in the air: no photographic laptop image */
+.held-laptop-section{padding:25px 3vw 105px!important;overflow:visible!important;perspective:1500px}
+.macbook-in-air{position:relative;width:min(100%,950px);height:650px;margin:0 auto;transform-style:preserve-3d;filter:drop-shadow(0 28px 25px rgba(34,29,24,.17))}
+.macbook-screen-frame{position:absolute;z-index:3;left:8%;top:0;width:84%;height:430px;padding:13px 13px 15px;border-radius:19px 19px 7px 7px;background:linear-gradient(135deg,#f8f9fa,#9fa4ab 30%,#e8eaed 58%,#858b93);border:1px solid #8b9097;box-shadow:inset 0 1px 2px #fff,0 5px 8px rgba(0,0,0,.18);transform:rotateX(-3deg);transform-origin:bottom center}
+.macbook-screen{height:100%;position:relative;display:grid;grid-template-columns:145px 1fr;overflow:hidden;border:8px solid #17191c;border-radius:7px 7px 2px 2px;background:#d9d1c5;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+.macbook-camera{position:absolute;z-index:5;top:5px;left:50%;width:5px;height:5px;border-radius:50%;background:#24272a;transform:translateX(-50%)}
+.mac-sidebar{background:#252624;color:#f4eee5;display:flex;flex-direction:column;gap:24px;padding:25px 20px;font:9px var(--mono);letter-spacing:.07em}
+.mac-avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#cf292d;color:white;font:bold 15px var(--display);letter-spacing:0}
+.desktop-main{padding:35px 30px;background:#d9d1c5;color:#171717}
+.desktop-kicker{font:10px var(--mono);letter-spacing:.12em;color:#c9272e;margin:0 0 12px}
+.desktop-main h2{font:700 clamp(25px,3.3vw,38px)/.98 var(--display);letter-spacing:-.04em;margin:0 0 12px}
+.desktop-subtitle{font:12px var(--sans);color:#777;margin:0 0 25px}
+.folder-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.folder{min-height:105px;text-align:left;padding:12px 10px;background:#f1eeea;border:1px solid rgba(0,0,0,.06);color:#171717;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;gap:7px;transition:transform .18s,box-shadow .18s}
+.folder:hover,.folder:focus-visible{transform:translateY(-4px);box-shadow:0 8px 15px rgba(0,0,0,.12);outline:1px solid #c9272e}
+.folder i{display:block;width:24px;height:16px;background:#ce292f;clip-path:polygon(12% 0,100% 0,88% 100%,0 100%)}
+.folder b{font:700 11px var(--sans)}
+.folder small{font:9px var(--sans);color:#888}
+.project-window{position:absolute!important;z-index:8;right:16px!important;bottom:15px!important;width:min(440px,70%)!important;max-height:82%!important;overflow:auto!important;background:rgba(250,248,244,.98)!important;color:#191919!important;border:1px solid rgba(0,0,0,.15)!important;border-radius:12px!important;padding:20px!important;box-shadow:0 12px 35px rgba(0,0,0,.24)!important;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(8px);transition:.2s}
+.project-window.project-open{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+.project-window h3{font-size:22px!important;line-height:1.08!important}
+.project-window p{font-size:12px!important;line-height:1.5!important}
+.close-project{float:right;border:0;background:transparent;font-size:25px;cursor:pointer;color:#222}
+.macbook-hinge{position:absolute;z-index:2;top:424px;left:10%;width:80%;height:14px;background:linear-gradient(180deg,#777d85,#d9dce0 45%,#92979f);border-radius:2px 2px 6px 6px}
+.macbook-keyboard-deck{position:absolute;z-index:2;left:0;top:425px;width:100%;height:190px;transform:perspective(850px) rotateX(48deg);transform-origin:top center;clip-path:polygon(10% 0,90% 0,100% 100%,0 100%);border-radius:0 0 25px 25px;background:linear-gradient(180deg,#b8bdc4 0%,#e7e9ec 8%,#aeb3ba 88%,#d8dbe0 100%);border:1px solid #969ba2;box-shadow:0 12px 20px rgba(0,0,0,.18),inset 0 2px 2px #fff}
+.keyboard-well{position:absolute;left:17%;top:12px;width:66%;height:100px;padding:8px;border-radius:8px;background:linear-gradient(180deg,#656a72,#a4a9b0);box-shadow:inset 0 1px 4px rgba(0,0,0,.4)}
+.keyboard-rows{height:100%;border-radius:4px;background:repeating-linear-gradient(90deg,transparent 0 5.7%,#30343a 5.7% 6.1%),repeating-linear-gradient(180deg,#34383e 0 17px,#969ba2 17px 20px);box-shadow:inset 0 1px 3px rgba(0,0,0,.6)}
+.macbook-trackpad{position:absolute;left:38%;top:122px;width:24%;height:50px;border:1px solid rgba(93,99,106,.7);border-radius:5px 5px 12px 12px;background:linear-gradient(145deg,#e8eaed,#b9bec5);box-shadow:inset 0 1px 3px #fff}
+.macbook-front-edge{position:absolute;left:2%;right:2%;bottom:4px;height:8px;border-radius:0 0 30px 30px;background:linear-gradient(180deg,#a3a8af,#eef0f2 50%,#858b93)}
+.holding-arm{position:absolute;z-index:1;top:525px;width:125px;height:125px;background:linear-gradient(90deg,#d7a88e,#f0c6ad 40%,#c88f78);border-radius:55px 55px 20px 20px;box-shadow:inset 8px 0 12px rgba(255,255,255,.22)}
+.arm-left{left:1%;transform:rotate(14deg)}
+.arm-right{right:1%;transform:rotate(-14deg)}
+.holding-hand{position:absolute;top:-34px;left:24px;width:76px;height:58px;border-radius:35px 35px 24px 24px;background:linear-gradient(145deg,#f4cbb2,#d99f87);box-shadow:inset 0 3px 5px rgba(255,255,255,.35)}
+.arm-left .holding-hand{transform:rotate(-20deg)}
+.arm-right .holding-hand{transform:rotate(20deg)}
+@media(max-width:760px){
+ .held-laptop-section{padding:15px 0 55px!important}
+ .macbook-in-air{width:100%;height:570px;transform:scale(.94);transform-origin:top center;margin-bottom:-30px}
+ .macbook-screen-frame{left:3%;width:94%;height:350px;padding:9px 9px 11px;border-radius:15px 15px 5px 5px}
+ .macbook-screen{grid-template-columns:95px 1fr;border-width:6px}
+ .mac-sidebar{padding:18px 12px;gap:18px;font-size:7px}
+ .mac-avatar{width:32px;height:32px;font-size:12px}
+ .desktop-main{padding:25px 15px}
+ .desktop-main h2{font-size:clamp(21px,5vw,30px)}
+ .folder-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .folder{min-height:75px;padding:8px}
+ .folder b{font-size:9px}
+ .folder small{font-size:8px}
+ .macbook-hinge{top:344px}
+ .macbook-keyboard-deck{top:345px;height:155px}
+ .keyboard-well{height:82px}
+ .macbook-trackpad{top:99px;height:40px}
+ .holding-arm{top:455px;width:75px;height:100px}
+ .arm-left{left:-8px}.arm-right{right:-8px}
+ .holding-hand{width:56px;height:44px;left:10px}
+ .project-window{width:calc(100% - 20px)!important;right:10px!important;bottom:10px!important}
+}
+@media(max-width:480px){
+ .macbook-in-air{transform:scale(.88);transform-origin:top center;margin-left:-3%;width:106%;margin-bottom:-65px}
+ .macbook-screen-frame{height:330px}
+ .macbook-hinge{top:324px}
+ .macbook-keyboard-deck{top:325px}
+ .macbook-screen{grid-template-columns:78px 1fr}
+ .mac-sidebar{padding:14px 8px;gap:16px;font-size:6px}
+ .desktop-main{padding:20px 10px}
+ .desktop-subtitle{font-size:10px;margin-bottom:15px}
+}
