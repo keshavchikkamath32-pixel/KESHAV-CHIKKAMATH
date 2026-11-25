@@ -1639,3 +1639,80 @@
     animation: none !important;
   }
 }
+
+/* FULL-BLEED PAGE STAGES + SCROLL-LINKED PARALLAX
+   Applied only to Work and Creativity; Background and homepage stay unchanged. */
+.work-page, .creativity-page { padding-left: 0; padding-right: 0; }
+.work-page > .page-topline, .creativity-page > .page-topline {
+  padding-left: 5vw; padding-right: 5vw;
+}
+.work-page > .page-hero, .work-page > .laptop-section, .work-page > .evidence-section,
+.creativity-page > .page-hero, .creativity-page > .content-section { width: 100%; }
+.work-page .page-scroll-cue, .creativity-page .page-scroll-cue {
+  position: absolute; left: 8vw; bottom: 24px; z-index: 2;
+  display: inline-flex; align-items: center; gap: 13px;
+  color: rgba(255,250,241,.88); font: 500 10px var(--mono);
+  letter-spacing: .12em; text-transform: uppercase;
+}
+.page-scroll-cue span {
+  display: inline-block; color: #f07870; font: 20px/1 var(--display);
+  animation: cue-bob 1.6s ease-in-out infinite;
+}
+@keyframes cue-bob {
+  0%,100% { transform: translateY(-2px); }
+  50% { transform: translateY(5px); }
+}
+.work-page .laptop-section, .work-page .evidence-section,
+.creativity-page .content-section { overflow: hidden; }
+.work-page .laptop-section > *, .work-page .evidence-section > *,
+.creativity-page .content-section > * { position: relative; z-index: 1; }
+.work-page .laptop-section::after {
+  content: ""; position: absolute; z-index: 0; pointer-events: none;
+  width: clamp(150px,22vw,290px); height: clamp(150px,22vw,290px);
+  right: -5%; top: 28%; border: 1px solid rgba(240,120,112,.3);
+  transform: rotate(45deg);
+  box-shadow: 0 0 0 18px rgba(255,250,241,.025), 0 0 0 42px rgba(201,44,44,.045);
+  animation: parallax-diamond 1s linear both;
+  animation-timeline: scroll(root block);
+}
+.work-page .evidence-section::after {
+  content: ""; position: absolute; z-index: 0; pointer-events: none;
+  width: 180px; height: 180px; left: -65px; bottom: 8%;
+  border: 1px solid rgba(240,120,112,.34); border-radius: 50%;
+  box-shadow: 0 0 0 16px rgba(255,250,241,.025), 0 0 0 38px rgba(201,44,44,.055);
+  animation: parallax-orbit 1s linear both;
+  animation-timeline: scroll(root block);
+}
+.creativity-page .content-section::after {
+  content: ""; position: absolute; z-index: 0; pointer-events: none;
+  width: 190px; height: 190px; right: -65px; bottom: 12%;
+  border: 1px solid rgba(240,120,112,.34);
+  background: repeating-linear-gradient(135deg, transparent 0 12px, rgba(240,120,112,.07) 12px 13px);
+  transform: rotate(18deg);
+  animation: parallax-grid 1s linear both;
+  animation-timeline: scroll(root block);
+}
+@keyframes parallax-diamond {
+  from { translate: 0 90px; rotate: -14deg; }
+  to { translate: 0 -150px; rotate: 28deg; }
+}
+@keyframes parallax-orbit {
+  from { translate: 0 -100px; rotate: 18deg; }
+  to { translate: 0 130px; rotate: -28deg; }
+}
+@keyframes parallax-grid {
+  from { translate: 0 100px; rotate: -16deg; }
+  to { translate: 0 -190px; rotate: 22deg; }
+}
+@media (max-width: 700px) {
+  .work-page .page-scroll-cue, .creativity-page .page-scroll-cue {
+    left: 7vw; bottom: 18px;
+  }
+  .work-page .laptop-section::after, .work-page .evidence-section::after,
+  .creativity-page .content-section::after { width: 125px; height: 125px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work-page .page-scroll-cue span { animation: none; }
+  .work-page .laptop-section::after, .work-page .evidence-section::after,
+  .creativity-page .content-section::after { animation: none; }
+}
