@@ -1420,3 +1420,222 @@
   .resume-action { min-width: min(100%,145px); flex: 1; padding: 12px; gap: 9px; }
   .resume-action-icon { width: 30px; height: 30px; }
 }
+
+
+/* PORTFOLIO-WIDE VISUAL THREAD
+   Decorative-only layer: preserves existing copy, components, links and interactions. */
+.inner-page {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 92% 17%, rgba(201,44,44,.075), transparent 27%),
+    linear-gradient(180deg, #f4eee4 0%, #eee5d9 52%, #f4eee4 100%);
+}
+.inner-page > * { position: relative; z-index: 1; }
+.inner-page:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  top: 390px;
+  right: -125px;
+  width: 330px;
+  height: 330px;
+  border: 1px solid rgba(201,44,44,.24);
+  border-radius: 50%;
+  box-shadow: 0 0 0 22px rgba(23,22,21,.025), 0 0 0 54px rgba(201,44,44,.035);
+  transform: rotate(-18deg);
+  animation: portfolio-orbit linear both;
+  animation-timeline: scroll(root block);
+}
+.inner-page:after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  top: 720px;
+  left: -42px;
+  width: 110px;
+  height: 110px;
+  border: 1px solid rgba(23,22,21,.17);
+  background: repeating-linear-gradient(135deg, transparent 0 9px, rgba(23,22,21,.055) 9px 10px);
+  transform: rotate(22deg);
+  animation: portfolio-counter-drift linear both;
+  animation-timeline: scroll(root block);
+}
+@keyframes portfolio-orbit {
+  from { translate: 0 -35px; rotate: -8deg; }
+  to { translate: 0 210px; rotate: 34deg; }
+}
+@keyframes portfolio-counter-drift {
+  from { translate: 0 30px; rotate: 12deg; }
+  to { translate: 0 -170px; rotate: -24deg; }
+}
+
+/* Stronger page introductions: charcoal, warm white and the existing signature red. */
+.inner-page .page-hero {
+  isolation: isolate;
+  margin-top: 20px;
+  padding-left: 8vw;
+  padding-right: 8vw;
+  color: #fffaf1;
+  background:
+    radial-gradient(circle at 86% 22%, rgba(201,44,44,.22), transparent 26%),
+    linear-gradient(135deg, #292725 0%, #171615 72%, #24211f 100%);
+  border-top: 7px solid #c92c2c;
+  box-shadow: 0 18px 38px rgba(23,22,21,.13);
+}
+.inner-page .page-hero:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 7%;
+  top: 13%;
+  width: clamp(150px,22vw,270px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255,250,241,.18);
+  border-radius: 50%;
+  box-shadow: 0 0 0 18px rgba(255,250,241,.025), 0 0 0 42px rgba(201,44,44,.07);
+  animation: hero-geometry linear both;
+  animation-timeline: view();
+  animation-range: entry 0% exit 100%;
+}
+@keyframes hero-geometry {
+  from { transform: translate3d(0,35px,0) rotate(-18deg) scale(.92); }
+  to { transform: translate3d(0,-55px,0) rotate(28deg) scale(1.08); }
+}
+.inner-page .page-hero h1 { color: #fffaf1; }
+.inner-page .page-hero h1 em { color: #f07870; }
+.inner-page .page-hero > p:not(.eyebrow) { color: rgba(255,250,241,.76); }
+.inner-page .page-hero .eyebrow { color: #f07870; }
+
+/* Work desk: keep the MacBook exactly as built, but give the section a stage. */
+.inner-page .laptop-section {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(201,44,44,.16), transparent 48%),
+    linear-gradient(180deg, #252321 0%, #171615 100%);
+  border-top: 1px solid rgba(255,255,255,.12);
+  border-bottom: 7px solid #c92c2c;
+}
+.inner-page .laptop-section:before {
+  content: "";
+  position: absolute;
+  inset: 24px 3vw;
+  pointer-events: none;
+  border: 1px solid rgba(255,250,241,.09);
+  background: repeating-linear-gradient(90deg, transparent 0 79px, rgba(255,255,255,.025) 79px 80px);
+}
+.inner-page .evidence-section {
+  position: relative;
+  isolation: isolate;
+  color: #fffaf1;
+  background:
+    radial-gradient(circle at 88% 20%, rgba(201,44,44,.18), transparent 28%),
+    linear-gradient(145deg, #292725, #171615);
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+.inner-page .evidence-section .section-kicker { color: #f07870; }
+.inner-page .evidence-section h2 { color: #fffaf1; }
+.inner-page .evidence-section h2 span { color: #f07870; }
+.inner-page .evidence-card {
+  border: 1px solid rgba(255,250,241,.18);
+  box-shadow: 0 8px 0 rgba(0,0,0,.22), 0 18px 28px rgba(0,0,0,.16);
+}
+
+/* Creativity: turn the reel room into a deliberate dark gallery without changing tiles. */
+.inner-page .content-section {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 4% 12%, rgba(201,44,44,.12), transparent 30%),
+    linear-gradient(180deg, #211f1d 0%, #171615 100%);
+  color: #fffaf1;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+.inner-page .content-section .section-kicker { color: #f07870; }
+.inner-page .content-section .section-heading h2 { color: #fffaf1; }
+.inner-page .content-section .section-heading h2 span { color: #f07870; }
+.inner-page .content-section .section-intro { color: rgba(255,250,241,.68); }
+.inner-page .content-section code {
+  color: #fffaf1;
+  background: rgba(201,44,44,.32);
+  border: 1px solid rgba(240,120,112,.28);
+}
+.inner-page .note-card {
+  color: #211f1d;
+  background: linear-gradient(125deg, #f4eee4, #e4d7c8);
+  border-left: 5px solid #c92c2c;
+  box-shadow: 0 10px 0 rgba(0,0,0,.18), 0 22px 35px rgba(0,0,0,.18);
+}
+
+/* Background: make the existing scrapbook timeline feel mounted in a gallery. */
+.inner-page .timeline {
+  position: relative;
+  isolation: isolate;
+  max-width: none;
+  padding: 68px max(8vw, 40px) 70px;
+  margin: 0 -5.55vw;
+  border-left: 0;
+  background:
+    radial-gradient(circle at 90% 18%, rgba(201,44,44,.2), transparent 24%),
+    linear-gradient(145deg, #242220 0%, #171615 100%);
+}
+.inner-page .timeline:before {
+  content: "";
+  position: absolute;
+  left: max(5vw, 22px);
+  top: 8%;
+  bottom: 8%;
+  border-left: 1px dashed rgba(240,120,112,.72);
+}
+.inner-page .timeline-item { z-index: 1; }
+.inner-page .timeline-item:before { border-color: #242220; }
+.inner-page .timeline-date { color: #f07870; }
+.inner-page .timeline-paper {
+  border: 1px solid rgba(255,255,255,.65);
+  box-shadow: 7px 9px 0 rgba(201,44,44,.72), 0 22px 35px rgba(0,0,0,.24);
+}
+.inner-page .closing-note {
+  position: relative;
+  overflow: hidden;
+  color: #fffaf1;
+  background:
+    radial-gradient(circle at 84% 22%, rgba(201,44,44,.2), transparent 26%),
+    linear-gradient(135deg, #302d2a, #171615);
+  border-top: 7px solid #c92c2c;
+}
+.inner-page .closing-note .eyebrow { color: #f07870; }
+.inner-page .closing-note h2 { color: #fffaf1; }
+.inner-page .closing-note h2 em { color: #f07870; }
+.inner-page .closing-note .button-link {
+  border-color: rgba(255,250,241,.65);
+  color: #fffaf1;
+}
+
+/* Resume: keep the printer, paper and actions untouched; enrich only the surrounding canvas. */
+.resume-page {
+  background:
+    radial-gradient(ellipse at 90% 12%, rgba(201,44,44,.12), transparent 25%),
+    linear-gradient(180deg, #eee5d9 0%, #f4eee4 45%, #e8ded1 100%);
+}
+.resume-page .resume-hero { margin-bottom: 18px; }
+.resume-page .printer-stage {
+  border-color: rgba(255,255,255,.82);
+  box-shadow: 0 28px 65px rgba(23,22,21,.2), 0 7px 0 rgba(201,44,44,.8), inset 0 1px 0 #fff;
+}
+.resume-page .printer-caption .eyebrow { color: #c92c2c; }
+
+@media (max-width: 700px) {
+  .inner-page:before { right: -210px; width: 260px; height: 260px; }
+  .inner-page:after { left: -70px; width: 78px; height: 78px; }
+  .inner-page .page-hero { padding-left: 7vw; padding-right: 7vw; }
+  .inner-page .timeline { padding-left: 38px; padding-right: 22px; margin-left: -5.5vw; margin-right: -5.5vw; }
+  .inner-page .timeline:before { left: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .inner-page:before, .inner-page:after, .inner-page .page-hero:before {
+    animation: none !important;
+  }
+}
