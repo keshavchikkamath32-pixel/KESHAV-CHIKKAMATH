@@ -934,3 +934,64 @@
 @media (prefers-reduced-motion: reduce) {
   .expertise-card, .expertise-card:hover { transform: none; }
 }
+
+
+/* Head hotspot: exact requested 50% horizontal position. */
+.video-hero .brain-hotspot {
+  left: 50% !important;
+}
+@media (max-width: 800px) {
+  .video-hero .brain-hotspot {
+    left: 50% !important;
+  }
+}
+
+/* A clear invitation to continue below the interactive hero. */
+.video-hero .scroll-invitation {
+  position: absolute;
+  z-index: 8;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 15px 10px 17px;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 999px;
+  background: rgba(23,22,21,.76);
+  color: #fffaf1;
+  box-shadow: 0 5px 0 rgba(201,44,44,.9), 0 12px 24px rgba(0,0,0,.18);
+  font: 600 10px var(--mono);
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background .2s ease, box-shadow .2s ease;
+}
+.video-hero .scroll-invitation:hover {
+  background: rgba(201,44,44,.94);
+  box-shadow: 0 5px 0 rgba(23,22,21,.85), 0 14px 26px rgba(0,0,0,.2);
+}
+.video-hero .scroll-invitation .scroll-arrow {
+  display: inline-block;
+  color: #ffaaa2;
+  font-size: 17px;
+  line-height: .8;
+  animation: scroll-nudge 1.25s ease-in-out infinite;
+}
+@keyframes scroll-nudge {
+  0%, 100% { transform: translateY(-2px); }
+  50% { transform: translateY(3px); }
+}
+@media (max-width: 520px) {
+  .video-hero .scroll-invitation {
+    bottom: 18px;
+    font-size: 9px;
+    padding: 9px 13px;
+    white-space: nowrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .video-hero .scroll-invitation .scroll-arrow { animation: none; }
+}
