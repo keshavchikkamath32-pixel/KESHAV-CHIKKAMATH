@@ -1231,3 +1231,15 @@
 .video-hero .brain-hotspot.pointer-inside-head > .hotspot-label {
   pointer-events: auto !important;
 }
+
+
+/* Final requested position: restore creativity hotspot to 50%.
+   Keep the pointer-to-dialogue interaction fix immediately in force. */
+.video-hero .brain-hotspot { left: 50% !important; }
+@media (max-width: 800px) {
+  .video-hero .brain-hotspot { left: 50% !important; }
+}
+.video-hero .brain-hotspot > .hotspot-label,
+.video-hero .brain-hotspot.pointer-inside-head > .hotspot-label {
+  pointer-events: auto !important;
+}
