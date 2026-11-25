@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     green: {
       label: "GREEN PEDDLE / CONTENT MARKETING",
       title: "Building a page from zero.",
-      body: "Helped build Green Peddle’s Instagram presence from the ground up through content planning, creative concepts, reels, carousel posts and sustainability-focused messaging. The work introduced the marketplace’s purpose and helped people discover the initiative."
+      body: "Helped build Green Peddle’s Instagram presence from the ground up through content planning, creative concepts, reels, carousel posts and sustainability-focused messaging. The work introduced the marketplace’s purpose and helped people discover the initiative.", credentials: true
     },
     innovate: {
       label: "INNOVATE CONNECTA / CONTENT MARKETING",
@@ -86,6 +86,11 @@ document.addEventListener("DOMContentLoaded", () => {
       label: "TEDx / COLLEGE INVOLVEMENT",
       title: "Pre-marketing team.",
       body: "Part of the TEDx Pre-Marketing Team at college. Additional campaign details, creative assets and exact responsibilities can be added when supplied."
+    },
+    classroom: {
+      label: "COLLEGE CLASSROOM PAGE / SOCIAL MEDIA MANAGEMENT",
+      title: "A small audience. Big reach.",
+      body: "Managed the social media presence for the college classroom page, creating and publishing short-form content that travelled well beyond the page’s follower base. Some reels crossed 100K+ views, with others reaching 90K+ and 60K+ views. The standout story is the reach achieved relative to the size of the audience."
     }
   };
   const panel = document.querySelector("#project-window");
@@ -93,7 +98,9 @@ document.addEventListener("DOMContentLoaded", () => {
     clickSound();
     const p = projects[button.dataset.project];
     if (!p || !panel) return;
-    panel.innerHTML = `<button class="close-project" aria-label="Close project">×</button><span class="eyebrow">${p.label}</span><h3>${p.title}</h3><p>${p.body}</p><span class="project-footnote">CASE FILE / DETAILS BASED ON CURRENT RESUME</span>`;
+    const credentials = p.credentials ? `<div class="credential-panel"><span class="eyebrow">SUPPORTING DOCUMENTS</span><p>Green Peddle certificate and recommendation letter will be available here.</p><div class="credential-actions"><button type="button" disabled>Certificate · awaiting upload</button><button type="button" disabled>Recommendation letter · awaiting upload</button></div></div>` : "";
+    const metrics = button.dataset.project === "classroom" ? `<div class="reach-stats"><div><b>100K+</b><small>REEL VIEWS</small></div><div><b>90K+</b><small>REEL VIEWS</small></div><div><b>60K+</b><small>REEL VIEWS</small></div></div>` : "";
+    panel.innerHTML = `<button class="close-project" aria-label="Close project">×</button><span class="eyebrow">${p.label}</span><h3>${p.title}</h3><p>${p.body}</p>${metrics}${credentials}<span class="project-footnote">CASE FILE / SELECTED WORK</span>`;
     panel.classList.add("project-open");
     panel.querySelector(".close-project").addEventListener("click", () => panel.classList.remove("project-open"));
   }));
