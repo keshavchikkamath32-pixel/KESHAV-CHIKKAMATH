@@ -749,3 +749,36 @@
  .macbook-menubar{height:25px!important}
  .macos-desktop{border-width:6px!important;min-height:560px!important}
 }
+
+/* Replace the CSS-built laptop with a realistic hands-held MacBook visual */
+.held-laptop-section{padding:0 2vw 70px!important;perspective:none!important}
+.held-laptop-scene{position:relative;width:min(100%,760px);margin:0 auto;line-height:0}
+.held-laptop-scene>img{display:block;width:100%;height:auto;filter:drop-shadow(0 20px 24px rgba(28,23,18,.13))}
+.screen-project-hit{position:absolute;z-index:2;border:0;background:transparent;border-radius:10px;cursor:pointer;outline-offset:3px}
+.screen-project-hit:hover,.screen-project-hit:focus-visible{background:rgba(138,91,222,.12);outline:1px solid rgba(104,68,178,.35)}
+.hit-green{left:29.5%;top:32.5%;width:12.5%;height:13%}
+.hit-classroom{left:42.5%;top:32.5%;width:13.5%;height:13%}
+.hit-laksya{left:57%;top:32.5%;width:12.5%;height:13%}
+.hit-tedx{left:71.5%;top:32.5%;width:13%;height:13%}
+.hit-innovate{left:20%;top:26%;width:8%;height:9%}
+.held-project-window{position:absolute!important;z-index:5;left:28%!important;top:18%!important;right:auto!important;bottom:auto!important;width:49%!important;max-height:31%!important;overflow:auto!important;padding:18px 20px!important;border-radius:12px!important;background:rgba(255,255,255,.96)!important;box-shadow:0 12px 34px rgba(20,18,28,.25)!important;border:1px solid rgba(255,255,255,.85)!important;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(8px);transition:opacity .2s ease,transform .2s ease,visibility .2s}
+.held-project-window.project-open{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+.held-project-window h3{font-size:clamp(16px,2.2vw,25px)!important;line-height:1.1!important;margin:7px 0!important}
+.held-project-window p{font-size:clamp(9px,1.1vw,12px)!important;line-height:1.4!important;margin:6px 0!important}
+.held-project-window .eyebrow{font-size:8px!important}
+.held-project-window .close-project{position:sticky!important;float:right;top:0}
+.held-project-window .credential-panel{margin:8px 0;padding:8px}
+.held-project-window .credential-panel>p{font-size:10px!important}
+.held-project-window .credential-actions a{font-size:9px}
+.held-project-window .reach-stats{margin:8px 0}
+.held-project-window .reach-stats>div{padding:7px}
+.held-project-window .reach-stats b{font-size:17px}
+@media(max-width:600px){
+ .held-laptop-section{padding:0 0 45px!important}
+ .held-laptop-scene{width:100%}
+ .held-project-window{left:24%!important;top:17%!important;width:54%!important;max-height:34%!important;padding:10px 12px!important}
+ .held-project-window h3{font-size:15px!important}
+ .held-project-window p{font-size:9px!important}
+ .held-project-window .reach-stats b{font-size:14px}
+ .hit-green,.hit-classroom,.hit-laksya,.hit-tedx{top:32%;height:14%}
+}
