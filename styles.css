@@ -1778,12 +1778,9 @@ body.portfolio-inner-body .inner-page .journey-hero h1 em,
 body.portfolio-inner-body .inner-page .closing-note h2 em { color: #f07870; }
 body.portfolio-inner-body .inner-page .journey-hero > p:not(.eyebrow) { color: rgba(255,250,241,.76); }
 body.portfolio-inner-body .inner-page .timeline {
-  margin-left: 0;
-  margin-right: 0;
   border-left-color: rgba(240,120,112,.7);
 }
 body.portfolio-inner-body .inner-page .timeline-item:before { border-color: #242220; }
-body.portfolio-inner-body .inner-page .resume-hero { margin-bottom: 18px; }
 body.portfolio-inner-body .inner-page .printer-caption p { color: rgba(255,250,241,.72); }
 body.portfolio-inner-body .inner-page .printer-caption .eyebrow { color: #f07870; }
 
@@ -1870,4 +1867,23 @@ body.portfolio-inner-body a.page-scroll-cue:hover span { color: #fffaf1; }
   body.portfolio-inner-body .inner-page:before,
   body.portfolio-inner-body .inner-page:after,
   body.portfolio-inner-body .page-scroll-cue span { animation: none !important; }
+}
+
+
+/* Readability correction: keep the MacBook's light desktop text dark.
+   These are colour-only overrides; the original desktop geometry is unchanged. */
+.work-page .desktop-main,
+.work-page .desktop-welcome,
+.work-page .desktop-welcome h2,
+.work-page .desktop-welcome p,
+.work-page .folder,
+.work-page .folder b {
+  color: #292725;
+}
+.work-page .desktop-welcome .eyebrow { color: #c92c2c; }
+.work-page .folder small { color: #625b53; }
+.work-page .project-window,
+.work-page .project-window h3,
+.work-page .project-window .close-project {
+  color: #292725;
 }
