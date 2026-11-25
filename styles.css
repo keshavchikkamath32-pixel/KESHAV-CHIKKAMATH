@@ -2303,3 +2303,40 @@ body.portfolio-inner-body .contact-page .contact-scroll-prompt:focus-visible {
     max-width: calc(100vw - 28px);
   }
 }
+
+
+/* CONTACT CARDS — consistent frosted-white material, with the original red hover.
+   Keep the existing decorative marks and logos exactly as authored. */
+body.portfolio-inner-body .contact-page .contact-links a,
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(1),
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(2),
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(3) {
+  color: #fffaf1;
+  background: linear-gradient(145deg, rgba(255,250,241,.20), rgba(255,250,241,.09));
+  border-color: rgba(255,250,241,.48);
+  box-shadow: 0 16px 34px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.24);
+}
+body.portfolio-inner-body .contact-page .contact-links a::before {
+  color: rgba(255,250,241,.2);
+}
+body.portfolio-inner-body .contact-page .contact-links a:hover,
+body.portfolio-inner-body .contact-page .contact-links a:focus-visible,
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(1):hover,
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(1):focus-visible,
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(2):hover,
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(2):focus-visible,
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(3):hover,
+body.portfolio-inner-body .contact-page .contact-links a:nth-child(3):focus-visible {
+  color: #fffaf1;
+  background: #c92c2c;
+  border-color: rgba(255,250,241,.72);
+  box-shadow: 0 22px 42px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.22);
+}
+body.portfolio-inner-body .contact-page .contact-links a:hover::before,
+body.portfolio-inner-body .contact-page .contact-links a:focus-visible::before {
+  color: rgba(255,250,241,.22);
+}
+body.portfolio-inner-body .contact-page .contact-links a:hover > span,
+body.portfolio-inner-body .contact-page .contact-links a:focus-visible > span {
+  color: #fffaf1;
+}
