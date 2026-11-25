@@ -2562,3 +2562,56 @@ body.portfolio-inner-body .creativity-page .film-teaser-link {
     letter-spacing: 0;
   }
 }
+
+
+/* Physical-film treatment: bevelled rails, punched sprocket holes and depth. */
+body.portfolio-inner-body .creativity-page .film-teaser {
+  padding: 23px clamp(14px, 2.2vw, 28px);
+  background: linear-gradient(180deg, #4b4844 0%, #292725 13%, #151413 50%, #292321 87%, #4a3834 100%);
+  border: 1px solid rgba(255,250,241,.42);
+  border-left: 4px solid #c92c2c;
+  border-radius: 6px;
+  box-shadow:
+    0 3px 0 #090909,
+    0 7px 0 rgba(255,250,241,.08),
+    0 14px 25px rgba(0,0,0,.34),
+    inset 0 2px 3px rgba(255,255,255,.22),
+    inset 0 -3px 5px rgba(0,0,0,.55);
+  transform: perspective(900px) rotateX(2deg);
+  transform-origin: center;
+}
+body.portfolio-inner-body .creativity-page .film-teaser::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 4px 2.7px at 11px 6px, rgba(5,5,5,.92) 0 68%, rgba(255,255,255,.26) 78%, transparent 100%) left top / 22px 12px repeat-x,
+    radial-gradient(ellipse 4px 2.7px at 11px 6px, rgba(5,5,5,.92) 0 68%, rgba(255,255,255,.26) 78%, transparent 100%) left bottom / 22px 12px repeat-x;
+  box-shadow: inset 0 5px 5px rgba(255,255,255,.12), inset 0 -5px 5px rgba(0,0,0,.38);
+}
+body.portfolio-inner-body .creativity-page .film-teaser::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 11px 2px;
+  pointer-events: none;
+  border-top: 1px solid rgba(255,250,241,.12);
+  border-bottom: 1px solid rgba(255,250,241,.12);
+  box-shadow: 0 1px 0 rgba(0,0,0,.35), 0 -1px 0 rgba(255,255,255,.04);
+}
+body.portfolio-inner-body .creativity-page .film-teaser > span {
+  position: relative;
+  z-index: 1;
+}
+body.portfolio-inner-body .creativity-page .film-teaser:hover,
+body.portfolio-inner-body .creativity-page .film-teaser:focus-visible {
+  transform: perspective(900px) rotateX(0deg) translateY(-4px);
+  box-shadow:
+    0 4px 0 #090909,
+    0 8px 0 rgba(255,250,241,.08),
+    0 19px 30px rgba(0,0,0,.38),
+    inset 0 2px 3px rgba(255,255,255,.24),
+    inset 0 -3px 5px rgba(0,0,0,.55);
+}
